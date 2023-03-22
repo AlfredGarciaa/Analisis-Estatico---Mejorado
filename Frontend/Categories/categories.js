@@ -7,9 +7,7 @@ window.addEventListener('DOMContentLoaded', function(event){
     }
 
     function goToEditCategory(){
-        //debugger;
         let categoryId = this.dataset.editCategoryId;
-        //alert(productId);
         window.location.href = `../Categories/editCategory.html?categoryId=${categoryId}`;
     }
 
