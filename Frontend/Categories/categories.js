@@ -90,7 +90,7 @@ window.addEventListener('DOMContentLoaded', function(event){
                         <div class="card-overlay" data-card-category-id="${category.id}"></div>
                     </div>`});
                 
-                var productsContent = productCards.join('');
+                let productsContent = productCards.join('');
                 document.getElementById('cards-container').innerHTML = productsContent;
                 
                 let delButtons = document.querySelectorAll('#cards-container .card .card-bottom .btn-wrapper .delete-container'); /*.delete-btn[data-delete-product-id]*/ 
