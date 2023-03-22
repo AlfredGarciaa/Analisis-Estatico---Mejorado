@@ -29,8 +29,7 @@ window.addEventListener('DOMContentLoaded', function(event){
     }
 
     function cardsSpecificFilter(){
-        //debugger;
-        let filter = document.querySelector('#navigation-container .specific-filter-wrapper #specific-filter').value;//document.querySelector('.filter-container .specific-filter-wrapper #specific-filter').value;
+        let filter = document.querySelector('#navigation-container .specific-filter-wrapper #specific-filter').value;
         let selector = (filter==="name")? '.card-name' : (filter==="description")? '.card-description' : 'none';
         let val = document.querySelector('#specific-filter-input').value;//"cake";
         val = val.toUpperCase();
@@ -38,7 +37,6 @@ window.addEventListener('DOMContentLoaded', function(event){
     
         if(selector != "none"){
             cards.forEach(card => {
-                //debugger;
                 let name = card.querySelector(`.card-properties ${selector}`).innerText.toUpperCase();
                 if(!name.includes(val))
                     card.style.display = "none";
@@ -47,10 +45,8 @@ window.addEventListener('DOMContentLoaded', function(event){
                 }
             });
         }
-        
-        //window.location.reload();
-
     }
+    
     async function fetchCategories()
     {
         const url = `${baseUrl}/categories`;//`${baseUrl}/categories`;
