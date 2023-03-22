@@ -48,43 +48,43 @@ namespace PastryShopAPI.Services
 
             if (!result)
             {
-                throw new Exception("Database Error");
+                throw new ArgumentNullException("obj");
             }
 
             return true;
         }
 
-        public async Task<ProductModel> GetProductAsync(long categoryId, long productId)
+        public async Task<ProductModel> GetProductAsync(long categoriyId, long productId)
         {
-            await ValidateCategoryAsync(categoryId);
-            var productEntity = await _pastryShopRepository.GetProductAsync(categoryId, productId);
+            await ValidateCategoryAsync(categoriyId);
+            var productEntity = await _pastryShopRepository.GetProductAsync(categoriyId, productId);
             if (productEntity == null)
             {
-                throw new NotFoundItemException($"The product with id: {productId} does not exist in category with id:{categoryId}.");
+                throw new NotFoundItemException($"The product with id: {productId} does not exist in category with id:{categoriyId}.");
             }
 
             var productModel = _mapper.Map<ProductModel>(productEntity);
 
-            productModel.Id = categoryId;
+            productModel.Id = categoriyId;
             return productModel;
         }
 
-        public async Task<IEnumerable<ProductModel>> GetProductsAsync(long categoryId)
+        public async Task<IEnumerable<ProductModel>> GetProductsAsync(long categoriyId)
         {
-            await ValidateCategoryAsync(categoryId);
-            var products = await _pastryShopRepository.GetProductsAsync(categoryId);
+            await ValidateCategoryAsync(categoriyId);
+            var products = await _pastryShopRepository.GetProductsAsync(categoriyId);
             return _mapper.Map<IEnumerable<ProductModel>>(products);
         }
 
-        public async Task<ProductModel> UpdateProductAsync(long categoryId, long productId, ProductModel updatedProduct)
+        public async Task<ProductModel> UpdateProductAsync(long categoriyId, long productId, ProductModel updatedProduct)
         {
-            await ValidateCategoryAndProductAsync(categoryId, productId);
-            await _pastryShopRepository.UpdateProductAsync(categoryId, productId, _mapper.Map<ProductEntity>(updatedProduct));
+            await ValidateCategoryAndProductAsync(categoriyId, productId);
+            await _pastryShopRepository.UpdateProductAsync(categoriyId, productId, _mapper.Map<ProductEntity>(updatedProduct));
             var result = await _pastryShopRepository.SaveChangesAsync();
 
             if (!result)
             {
-                throw new Exception("Database Error");
+                throw new ArgumentNullException("obj");
             }
 
             return updatedProduct;
