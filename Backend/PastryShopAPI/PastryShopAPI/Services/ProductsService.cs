@@ -4,7 +4,6 @@ using PastryShopAPI.Exceptions;
 using PastryShopAPI.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace PastryShopAPI.Services
@@ -41,7 +40,7 @@ namespace PastryShopAPI.Services
 
         public async Task<bool> DeleteProductAsync(long categoriyId, long productId)
         {
-            await ValidateCategoryAndProductAsync(categoriyId, productId);
+            ValidateCategoryAndProduct(categoriyId, productId);
             await _pastryShopRepository.DeleteProductAsync(categoriyId, productId);
 
             var result = await _pastryShopRepository.SaveChangesAsync();
@@ -78,7 +77,7 @@ namespace PastryShopAPI.Services
 
         public async Task<ProductModel> UpdateProductAsync(long categoriyId, long productId, ProductModel updatedProduct)
         {
-            await ValidateCategoryAndProductAsync(categoriyId, productId);
+            ValidateCategoryAndProduct(categoriyId, productId);
             await _pastryShopRepository.UpdateProductAsync(categoriyId, productId, _mapper.Map<ProductEntity>(updatedProduct));
             var result = await _pastryShopRepository.SaveChangesAsync();
 
@@ -90,24 +89,24 @@ namespace PastryShopAPI.Services
             return updatedProduct;
         }
 
-        private async Task ValidateCategoryAsync(long categoryId)
+        private async Task ValidateCategoryAsync(long categoriyId)
         {
-            var category = await _pastryShopRepository.GetCategoryAsync(categoryId); // Reemplazar con GetCategoryAndProducts()  hacer este endpoint!
+            var category = await _pastryShopRepository.GetCategoryAsync(categoriyId); // Reemplazar con GetCategoryAndProducts()  hacer este endpoint!
             if (category == null)
             {
-                throw new NotFoundItemException($"The category with id: {categoryId} does not exists.");
+                throw new NotFoundItemException($"The category with id: {categoriyId} does not exists.");
             }
         }
 
-        private async Task ValidateCategoryAndProductAsync(long categoryId, long productId)
+        private void ValidateCategoryAndProduct(long categoriyId, long productId)
         {
-            var product = await GetProductAsync(categoryId, productId);
+            //var product = await GetProductAsync(categoriyId, productId);
         }
 
         // FOR COMBOS Creation
-        public async Task<IEnumerable<ProductModel>> GetAllProductsAsync(long categoryId)
+        public async Task<IEnumerable<ProductModel>> GetAllProductsAsync(long categoriyId)
         {
-            await ValidateCategoryAsync(categoryId);
+            await ValidateCategoryAsync(categoriyId);
             var products = await _pastryShopRepository.GetAllProductsAsync();
             return _mapper.Map<IEnumerable<ProductModel>>(products);
         }
