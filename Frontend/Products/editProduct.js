@@ -46,28 +46,23 @@ window.addEventListener('DOMContentLoaded', function(event){
                 //delete options.headers['Content-Type'];
                 if(data.status === 200){
                     debugger;
-                    //window.location.href = "http://127.0.0.1:5500/";
                     alert('edited');
-                    window.location.href = `../Products/products.html?categoryId=${categoryId}`;//"http://127.0.0.1:5500/";
-                    //window.location.reload(); //Reloads the page
+                    window.location.href = `../Products/products.html?categoryId=${categoryId}`;
                 }else {
                     data.text()
                     .then((error)=>{
                         alert('edited');
-                        //alert(`ARREGLAR ESTO Y QUE NO SALGA ERROR${error}`);
                         //console.log(error);
                         window.location.href = `../Products/products.html?categoryId=${categoryId}`;
                     });
                 }
             });
-        
-        //window.location.href = "http://127.0.0.1:5500/";
     }
     
     async function fetchProduct()
     {
         //debugger;
-        const url = `${baseUrl}/products/${productId}`;//`${baseUrl}/categories/${productId}`;
+        const url = `${baseUrl}/products/${productId}`;
         let response = await fetch(url);
         //debugger;
         try{
