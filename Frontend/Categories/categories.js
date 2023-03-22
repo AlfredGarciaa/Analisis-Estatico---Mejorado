@@ -30,7 +30,8 @@ window.addEventListener('DOMContentLoaded', function(event){
 
     function cardsSpecificFilter(){
         let filter = document.querySelector('#navigation-container .specific-filter-wrapper #specific-filter').value;
-        let selector = (filter==="name")? '.card-name' : (filter==="description")? '.card-description' : 'none';
+        let description = (filter==="description")? '.card-description' : 'none';
+        let selector = (filter==="name")? '.card-name' : description;
         let val = document.querySelector('#specific-filter-input').value;//"cake";
         val = val.toUpperCase();
         let cards = document.querySelectorAll('.card');
@@ -46,7 +47,7 @@ window.addEventListener('DOMContentLoaded', function(event){
             });
         }
     }
-    
+
     async function fetchCategories()
     {
         const url = `${baseUrl}/categories`;//`${baseUrl}/categories`;
