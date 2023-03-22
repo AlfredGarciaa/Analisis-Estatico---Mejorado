@@ -11,8 +11,8 @@ namespace PastryShopAPI.Services
 {
     public class ProductsService : IProductsService
     {
-        private IPastryShopRepository _pastryShopRepository;
-        private IMapper _mapper;
+        readonly IPastryShopRepository _pastryShopRepository;
+        readonly IMapper _mapper;
 
         public ProductsService(IPastryShopRepository pastryShopRepository, IMapper mapper)
         {
@@ -21,28 +21,28 @@ namespace PastryShopAPI.Services
         }
 
 
-        public async Task<ProductModel> CreateProductAsync(long categoryId, ProductModel newProduct)
+        public async Task<ProductModel> CreateProductAsync(long categoriyId, ProductModel newProduct)
         {
-            await ValidateCategoryAsync(categoryId);
-            newProduct.CategoryId = categoryId;
+            await ValidateCategoryAsync(categoriyId);
+            newProduct.CategoryId = categoriyId;
             var productEntity = _mapper.Map<ProductEntity>(newProduct);
 
-            _pastryShopRepository.CreateProduct(categoryId, productEntity);
+            _pastryShopRepository.CreateProduct(categoriyId, productEntity);
 
             var result = await _pastryShopRepository.SaveChangesAsync();
 
             if (!result)
             {
-                throw new Exception("Database Error");
+                throw new ArgumentNullException("obj");
             }
 
             return _mapper.Map<ProductModel>(productEntity);
         }
 
-        public async Task<bool> DeleteProductAsync(long categoryId, long productId)
+        public async Task<bool> DeleteProductAsync(long categoriyId, long productId)
         {
-            await ValidateCategoryAndProductAsync(categoryId, productId);
-            await _pastryShopRepository.DeleteProductAsync(categoryId, productId);
+            await ValidateCategoryAndProductAsync(categoriyId, productId);
+            await _pastryShopRepository.DeleteProductAsync(categoriyId, productId);
 
             var result = await _pastryShopRepository.SaveChangesAsync();
 
