@@ -106,14 +106,13 @@ window.addEventListener('DOMContentLoaded', function(event){
                         </div>
                     </div>
                 `;
-                //var productContent = productCard.join('');
                 document.querySelector('#form-wrapper').innerHTML = productCard;
                 
                 let editButton = document.querySelector('.edit-submit'); /*.delete-btn[data-delete-product-id]*/ 
                 editButton.addEventListener('click', editFormProduct);//editProduct
                 
             } else {
-                var errorText = await response.text();
+                let errorText = await response.text();
                 alert(errorText);
             }
         } catch(error){
@@ -121,7 +120,6 @@ window.addEventListener('DOMContentLoaded', function(event){
             alert(errorText);
         }
     }
-    //debugger;
     var queryParams = window.location.search.split('?')[1];
     var queryParam1 = queryParams.split("&")[0];
     var queryParam2 = queryParams.split("&")[1];
