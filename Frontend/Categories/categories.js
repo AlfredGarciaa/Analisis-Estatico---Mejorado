@@ -50,7 +50,7 @@ window.addEventListener('DOMContentLoaded', function(event){
 
     async function fetchCategories()
     {
-        const url = `${baseUrl}/categories`;//`${baseUrl}/categories`;
+        const url = `${baseUrl}/categories`;
         let response = await fetch(url, { 
             method: 'GET',
             "Authorization": `Bearer ${sessionStorage.getItem("jwt")}`  // AUTHORIZATION:  Encoded Token JWT
@@ -58,14 +58,9 @@ window.addEventListener('DOMContentLoaded', function(event){
         try{//cardCategoryId
             if(response.status == 200){
                 let data = await response.json();
-                let productCards = data.map(category => { 
-                    //debugger;
+                let productCards = data.map(category => {
                     let backImageUrl = category.imagePath? 
                     `${baseRawUrl}/${category.imagePath}`.replace(/\\/g, "/") : category.imageUrl;
-                    /*if (category.imagePath){
-                        backImageUrl = `${baseRawUrl}/${category.imagePath}`; //https://www.w3schools.com/jsref/jsref_replace.asp
-                        backImageUrl = backImageUrl.replace(/\\/g, "/");//backImageUrl.replace("\\", "/").replace("\\", "/")
-                    }*/
                     return `
                     <div class="card" style="background: url(${backImageUrl})">
                         <div class="card-top" >
