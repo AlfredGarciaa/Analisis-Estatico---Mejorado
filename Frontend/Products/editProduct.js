@@ -121,5 +121,5 @@ window.addEventListener('DOMContentLoaded', function(event){
     
     const baseUrl = `http://localhost:3030/api/categories/${categoryId}`;
     const baseRawUrl = 'http://localhost:3030';
-    fetchProduct(productId);
+    fetchProduct();
 });
