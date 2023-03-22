@@ -52,7 +52,6 @@ window.addEventListener('DOMContentLoaded', function(event){
                     data.text()
                     .then((error)=>{
                         alert('edited');
-                        //console.log(error);
                         window.location.href = `../Products/products.html?categoryId=${categoryId}`;
                     });
                 }
