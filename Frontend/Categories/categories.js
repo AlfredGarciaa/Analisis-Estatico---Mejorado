@@ -121,16 +121,9 @@ window.addEventListener('DOMContentLoaded', function(event){
         }
     }
 
-
-    // VALIDATING JWT TOKEN FOR ACCESS 
-    /*if(!Boolean(sessionStorage.getItem("jwt"))){
-        window.location.href = "categories.html";
-    }*/
-
     const baseRawUrl = 'http://localhost:3030';
     const baseUrl = 'http://localhost:3030/api';
     fetchCategories();
-    //document.getElementById('fetch-btn').addEventListener('click', fetchTeams);
 });
 
 //https://www.freecodecamp.org/news/a-practical-es6-guide-on-how-to-perform-http-requests-using-the-fetch-api-594c3d91a547/
