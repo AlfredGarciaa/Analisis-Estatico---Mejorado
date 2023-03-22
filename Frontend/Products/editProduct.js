@@ -5,12 +5,7 @@ window.addEventListener('DOMContentLoaded', function(event){
         if (name === "" || description === "" || (image === "" && !imageFile) || price === 0){
             alert("Not valid values. Please fill all the fields");
             return false;
-        }
-        /*else if(name === name_placeholder && description === description_placeholder && image === image_placeholder && price == price_placeholder){
-            alert("Nothing changed");
-            window.location.href = `../Products/products.html?categoryId=${categoryId}`;//"http://127.0.0.1:5500/";
-        }*/
-        
+        } 
         else{
             return true;
         }
@@ -43,7 +38,6 @@ window.addEventListener('DOMContentLoaded', function(event){
             }
         
         fetch(url, options).then((data)=>{
-                //delete options.headers['Content-Type'];
                 if(data.status === 200){
                     debugger;
                     alert('edited');
@@ -60,7 +54,6 @@ window.addEventListener('DOMContentLoaded', function(event){
     
     async function fetchProduct()
     {
-        //debugger;
         const url = `${baseUrl}/products/${productId}`;
         let response = await fetch(url);
         try{
@@ -107,9 +100,9 @@ window.addEventListener('DOMContentLoaded', function(event){
                 `;
                 document.querySelector('#form-wrapper').innerHTML = productCard;
                 
-                let editButton = document.querySelector('.edit-submit'); /*.delete-btn[data-delete-product-id]*/ 
-                editButton.addEventListener('click', editFormProduct);//editProduct
-                
+                let editButton = document.querySelector('.edit-submit');
+                editButton.addEventListener('click', editFormProduct);
+
             } else {
                 let errorText = await response.text();
                 alert(errorText);
@@ -129,5 +122,4 @@ window.addEventListener('DOMContentLoaded', function(event){
     const baseUrl = `http://localhost:3030/api/categories/${categoryId}`;
     const baseRawUrl = 'http://localhost:3030';
     fetchProduct(productId);
-    
 });
