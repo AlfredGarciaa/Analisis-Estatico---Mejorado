@@ -2,60 +2,15 @@ window.addEventListener('DOMContentLoaded', function(event){
 
     function validProperties(name, description, price, image, imageFile){
         debugger;
-        let name_placeholder = document.querySelector('#name_input').placeholder
-        let description_placeholder = document.querySelector('#description_input').placeholder
-        let price_placeholder = document.querySelector('#price_input').placeholder
-        let image_placeholder = document.querySelector('#image_input').placeholder
         if (name === "" || description === "" || (image === "" && !imageFile) || price === 0){
             alert("Not valid values. Please fill all the fields");
             return false;
-        }
-        /*else if(name === name_placeholder && description === description_placeholder && image === image_placeholder && price == price_placeholder){
-            alert("Nothing changed");
-            window.location.href = `../Products/products.html?categoryId=${categoryId}`;//"http://127.0.0.1:5500/";
-        }*/
-        
+        } 
         else{
             return true;
         }
     }
-    
-    function editProduct()
-    {
-        debugger;
-        let name = document.querySelector('#name_input').value;
-        let description = document.querySelector('#description_input').value;
-        let price = +document.querySelector('#price_input').value;
-        let image = document.querySelector('#image_input').value;
-
-        if(!validProperties(name, description, price, image)){
-            return;
-        }
-        let url = `${baseUrl}/products/${productId}`;//`${baseUrl}/categories/${productId}`;
-        fetch(url, { 
-            headers: { "Content-Type": "application/json; charset=utf-8" },
-            method: 'PUT',
-            body: JSON.stringify({
-                Name: name,
-                Description: description,
-                Price: price,
-                ImageUrl: image
-            })
-            }).then((data)=>{
-                if(data.status === 200){
-                    //debugger;
-                    //window.location.href = "http://127.0.0.1:5500/";
-                    alert('edited');
-                    window.location.href = `../Products/products.html?categoryId=${categoryId}`;//"http://127.0.0.1:5500/";
-                    //window.location.reload(); //Reloads the page
-                }
-            }).catch((errormessage) => {
-                //alert(errormessage);
-            });
         
-        //window.location.href = "http://127.0.0.1:5500/";
-    }
-    
     function editFormProduct()
     {
         debugger;
@@ -76,40 +31,31 @@ window.addEventListener('DOMContentLoaded', function(event){
         formData.append('ImageUrl',imageUrl);
         formData.append('Image', imageFile);
 
-        let url = `${baseUrl}/products/${productId}/Form`;//`${baseUrl}/categories/${productId}`;
+        let url = `${baseUrl}/products/${productId}/Form`;
         let options = { 
             method: 'PUT',
             body: formData
             }
         
         fetch(url, options).then((data)=>{
-                //delete options.headers['Content-Type'];
                 if(data.status === 200){
                     debugger;
-                    //window.location.href = "http://127.0.0.1:5500/";
                     alert('edited');
-                    window.location.href = `../Products/products.html?categoryId=${categoryId}`;//"http://127.0.0.1:5500/";
-                    //window.location.reload(); //Reloads the page
+                    window.location.href = `../Products/products.html?categoryId=${categoryId}`;
                 }else {
                     data.text()
                     .then((error)=>{
                         alert('edited');
-                        //alert(`ARREGLAR ESTO Y QUE NO SALGA ERROR${error}`);
-                        //console.log(error);
                         window.location.href = `../Products/products.html?categoryId=${categoryId}`;
                     });
                 }
             });
-        
-        //window.location.href = "http://127.0.0.1:5500/";
     }
     
     async function fetchProduct()
     {
-        //debugger;
-        const url = `${baseUrl}/products/${productId}`;//`${baseUrl}/categories/${productId}`;
+        const url = `${baseUrl}/products/${productId}`;
         let response = await fetch(url);
-        //debugger;
         try{
             if(response.status == 200){
                 debugger;
@@ -152,14 +98,13 @@ window.addEventListener('DOMContentLoaded', function(event){
                         </div>
                     </div>
                 `;
-                //var productContent = productCard.join('');
                 document.querySelector('#form-wrapper').innerHTML = productCard;
                 
-                let editButton = document.querySelector('.edit-submit'); /*.delete-btn[data-delete-product-id]*/ 
-                editButton.addEventListener('click', editFormProduct);//editProduct
-                
+                let editButton = document.querySelector('.edit-submit');
+                editButton.addEventListener('click', editFormProduct);
+
             } else {
-                var errorText = await response.text();
+                let errorText = await response.text();
                 alert(errorText);
             }
         } catch(error){
@@ -167,18 +112,14 @@ window.addEventListener('DOMContentLoaded', function(event){
             alert(errorText);
         }
     }
-    //debugger;
-    var queryParams = window.location.search.split('?')[1];
-    var queryParam1 = queryParams.split("&")[0];
-    var queryParam2 = queryParams.split("&")[1];
+    let queryParams = window.location.search.split('?')[1];
+    let queryParam1 = queryParams.split("&")[0];
+    let queryParam2 = queryParams.split("&")[1];
 
-    var categoryId = queryParam1.split("=")[1];
-    var productId = queryParam2.split("=")[1];
+    let categoryId = queryParam1.split("=")[1];
+    let productId = queryParam2.split("=")[1];
     
     const baseUrl = `http://localhost:3030/api/categories/${categoryId}`;
     const baseRawUrl = 'http://localhost:3030';
-    fetchProduct(productId);
-    
+    fetchProduct();
 });
-
-//
