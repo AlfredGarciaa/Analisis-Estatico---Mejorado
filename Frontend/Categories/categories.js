@@ -111,8 +111,6 @@ window.addEventListener('DOMContentLoaded', function(event){
                 
                 let specific_filter_btn = document.querySelector('#specific-filter-btn');
                 specific_filter_btn.addEventListener('click', cardsSpecificFilter)
-                /*let general_filter_btn = document.querySelector('#general-filter-btn');
-                general_filter_btn.addEventListener('click', cardsGeneralFilter)*/
                 
             } else {
                 var errorText = await response.text();
