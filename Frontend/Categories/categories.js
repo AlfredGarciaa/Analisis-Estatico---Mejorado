@@ -16,16 +16,14 @@ window.addEventListener('DOMContentLoaded', function(event){
     }
 
     function DeleteCategory(event){
-        //debugger;
         let categoryId = this.dataset.deleteCategoryId;
-        //debugger;
-        let url = `${baseUrl}/categories/${categoryId}`;//`${baseUrl}/categories/${productId}`;
+        let url = `${baseUrl}/categories/${categoryId}`;
         fetch(url, { 
         method: 'DELETE'
         }).then((data)=>{
             if(data.status === 200){
                 alert('deleted');
-                window.location.reload(); //Reloads the page
+                window.location.reload();
             }
         }); 
     }
