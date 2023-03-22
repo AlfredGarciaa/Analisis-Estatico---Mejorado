@@ -2,7 +2,6 @@ window.addEventListener('DOMContentLoaded', function(event){
 
     function validProperties(name, description, price, image, imageFile){
         debugger;
-        let image_placeholder = document.querySelector('#image_input').placeholder
         if (name === "" || description === "" || (image === "" && !imageFile) || price === 0){
             alert("Not valid values. Please fill all the fields");
             return false;
@@ -16,43 +15,7 @@ window.addEventListener('DOMContentLoaded', function(event){
             return true;
         }
     }
-    
-    function editProduct()
-    {
-        debugger;
-        let name = document.querySelector('#name_input').value;
-        let description = document.querySelector('#description_input').value;
-        let price = +document.querySelector('#price_input').value;
-        let image = document.querySelector('#image_input').value;
-
-        if(!validProperties(name, description, price, image)){
-            return;
-        }
-        let url = `${baseUrl}/products/${productId}`;//`${baseUrl}/categories/${productId}`;
-        fetch(url, { 
-            headers: { "Content-Type": "application/json; charset=utf-8" },
-            method: 'PUT',
-            body: JSON.stringify({
-                Name: name,
-                Description: description,
-                Price: price,
-                ImageUrl: image
-            })
-            }).then((data)=>{
-                if(data.status === 200){
-                    //debugger;
-                    //window.location.href = "http://127.0.0.1:5500/";
-                    alert('edited');
-                    window.location.href = `../Products/products.html?categoryId=${categoryId}`;//"http://127.0.0.1:5500/";
-                    //window.location.reload(); //Reloads the page
-                }
-            }).catch((errormessage) => {
-                //alert(errormessage);
-            });
         
-        //window.location.href = "http://127.0.0.1:5500/";
-    }
-    
     function editFormProduct()
     {
         debugger;
@@ -73,7 +36,7 @@ window.addEventListener('DOMContentLoaded', function(event){
         formData.append('ImageUrl',imageUrl);
         formData.append('Image', imageFile);
 
-        let url = `${baseUrl}/products/${productId}/Form`;//`${baseUrl}/categories/${productId}`;
+        let url = `${baseUrl}/products/${productId}/Form`;
         let options = { 
             method: 'PUT',
             body: formData
