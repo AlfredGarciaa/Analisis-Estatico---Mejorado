@@ -2,7 +2,6 @@
 window.addEventListener('DOMContentLoaded', function(event){
 
     function goToProducts(){
-        //debugger;
         let categoryId = this.dataset.cardCategoryId;
         window.location.href = `../Products/products.html?categoryId=${categoryId}`;
     }
