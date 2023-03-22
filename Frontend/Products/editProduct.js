@@ -120,11 +120,11 @@ window.addEventListener('DOMContentLoaded', function(event){
         }
     }
     let queryParams = window.location.search.split('?')[1];
-    var queryParam1 = queryParams.split("&")[0];
-    var queryParam2 = queryParams.split("&")[1];
+    let queryParam1 = queryParams.split("&")[0];
+    let queryParam2 = queryParams.split("&")[1];
 
-    var categoryId = queryParam1.split("=")[1];
-    var productId = queryParam2.split("=")[1];
+    let categoryId = queryParam1.split("=")[1];
+    let productId = queryParam2.split("=")[1];
     
     const baseUrl = `http://localhost:3030/api/categories/${categoryId}`;
     const baseRawUrl = 'http://localhost:3030';
