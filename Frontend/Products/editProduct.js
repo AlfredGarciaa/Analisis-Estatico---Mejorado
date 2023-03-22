@@ -63,7 +63,6 @@ window.addEventListener('DOMContentLoaded', function(event){
         //debugger;
         const url = `${baseUrl}/products/${productId}`;
         let response = await fetch(url);
-        //debugger;
         try{
             if(response.status == 200){
                 debugger;
@@ -120,7 +119,7 @@ window.addEventListener('DOMContentLoaded', function(event){
             alert(errorText);
         }
     }
-    var queryParams = window.location.search.split('?')[1];
+    let queryParams = window.location.search.split('?')[1];
     var queryParam1 = queryParams.split("&")[0];
     var queryParam2 = queryParams.split("&")[1];
 
