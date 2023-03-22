@@ -2,9 +2,6 @@ window.addEventListener('DOMContentLoaded', function(event){
 
     function validProperties(name, description, price, image, imageFile){
         debugger;
-        let name_placeholder = document.querySelector('#name_input').placeholder
-        let description_placeholder = document.querySelector('#description_input').placeholder
-        let price_placeholder = document.querySelector('#price_input').placeholder
         let image_placeholder = document.querySelector('#image_input').placeholder
         if (name === "" || description === "" || (image === "" && !imageFile) || price === 0){
             alert("Not valid values. Please fill all the fields");
