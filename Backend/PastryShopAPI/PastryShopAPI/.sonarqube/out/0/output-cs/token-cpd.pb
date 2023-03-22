@@ -11909,553 +11909,508 @@ newProductT ^
 )S T
 ;T U
 } 
-} ˛K
+} §J
 mE:\Final-Project-WebTechnologies-main - copia\Backend\PastryShopAPI\PastryShopAPI\Services\ProductsService.cs
-	namespace
-
- 	
-PastryShopAPI
-
-
+	namespace		 	
+PastryShopAPI		
  
-.
+.		 
+Services		  
+{
 
- 
-Services
-
-  
-{ 
-public 
+ 
+public 
 
-class 
-ProductsService  
-:! "
-IProductsService# 3
-{ 
-private !
-IPastryShopRepository %!
-_pastryShopRepository& ;
-;; <
-private 
-IMapper 
-_mapper 
-;  
-public 
-ProductsService 
-( !
-IPastryShopRepository 4 
-pastryShopRepository5 I
-,I J
-IMapperK R
-mapperS Y
-)Y Z
-{ 	!
-_pastryShopRepository !
-=" # 
-pastryShopRepository$ 8
-;8 9
-_mapper 
-= 
-mapper 
-; 
-} 	
-public 
-async 
-Task 
-< 
-ProductModel &
->& '
-CreateProductAsync( :
-(: ;
-long; ?
+class 
+ProductsService  
+:! "
+IProductsService# 3
+{ 
+readonly !
+IPastryShopRepository &!
+_pastryShopRepository' <
+;< =
+readonly 
+IMapper 
+_mapper  
+;  !
+public 
+ProductsService 
+( !
+IPastryShopRepository 4 
+pastryShopRepository5 I
+,I J
+IMapperK R
+mapperS Y
+)Y Z
+{ 	!
+_pastryShopRepository !
+=" # 
+pastryShopRepository$ 8
+;8 9
+_mapper 
+= 
+mapper 
+; 
+} 	
+public 
+async 
+Task 
+< 
+ProductModel &
+>& '
+CreateProductAsync( :
+(: ;
+long; ?
+categoriyId@ K
+,K L
+ProductModelM Y
 
-categoryId@ J
-,J K
-ProductModelL X
+newProductZ d
+)d e
+{ 	
+await !
+ValidateCategoryAsync '
+(' (
+categoriyId( 3
+)3 4
+;4 5
 
-newProductY c
-)c d
-{ 	
-await !
-ValidateCategoryAsync '
-(' (
+newProduct 
+. 
 
-categoryId( 2
-)2 3
-;3 4
+CategoryId !
+=" #
+categoriyId$ /
+;/ 0
+var 
+productEntity 
+= 
+_mapper  '
+.' (
+Map( +
+<+ ,
+ProductEntity, 9
+>9 :
+(: ;
 
-newProduct 
-. 
-
-CategoryId !
-=" #
-
-categoryId$ .
-;. /
-var 
-productEntity 
-= 
-_mapper  '
-.' (
-Map( +
-<+ ,
-ProductEntity, 9
->9 :
-(: ;
-
-newProduct; E
-)E F
-;F G!
-_pastryShopRepository !
-.! "
-CreateProduct" /
-(/ 0
-
-categoryId0 :
-,: ;
-productEntity< I
-)I J
-;J K
-var   
-result   
-=   
-await   !
-_pastryShopRepository   4
-.  4 5
-SaveChangesAsync  5 E
-(  E F
-)  F G
-;  G H
-if"" 
-("" 
-!"" 
-result"" 
-)"" 
-{## 
-throw$$ 
-new$$ 
-	Exception$$ #
-($$# $
-$str$$$ 4
-)$$4 5
-;$$5 6
-}%% 
-return'' 
-_mapper'' 
-.'' 
-Map'' 
-<'' 
-ProductModel'' +
->''+ ,
-('', -
-productEntity''- :
-)'': ;
-;''; <
-}(( 	
-public** 
-async** 
-Task** 
-<** 
-bool** 
->** 
-DeleteProductAsync**  2
-(**2 3
-long**3 7
-
-categoryId**8 B
-,**B C
-long**D H
-	productId**I R
-)**R S
-{++ 	
-await,, +
-ValidateCategoryAndProductAsync,, 1
-(,,1 2
-
-categoryId,,2 <
-,,,< =
-	productId,,> G
-),,G H
-;,,H I
-await-- !
-_pastryShopRepository-- '
-.--' (
-DeleteProductAsync--( :
-(--: ;
-
-categoryId--; E
-,--E F
-	productId--G P
-)--P Q
-;--Q R
-var// 
-result// 
-=// 
-await// !
-_pastryShopRepository// 4
-.//4 5
-SaveChangesAsync//5 E
-(//E F
-)//F G
-;//G H
-if11 
-(11 
-!11 
-result11 
-)11 
-{22 
-throw33 
-new33 
-	Exception33 #
-(33# $
-$str33$ 4
-)334 5
-;335 6
-}44 
-return66 
-true66 
-;66 
-}77 	
-public99 
-async99 
-Task99 
-<99 
-ProductModel99 &
->99& '
-GetProductAsync99( 7
-(997 8
-long998 <
-
-categoryId99= G
-,99G H
-long99I M
-	productId99N W
-)99W X
-{:: 	
-await;; !
-ValidateCategoryAsync;; '
-(;;' (
-
-categoryId;;( 2
-);;2 3
-;;;3 4
-var<< 
-productEntity<< 
-=<< 
-await<<  %!
-_pastryShopRepository<<& ;
-.<<; <
-GetProductAsync<<< K
-(<<K L
-
-categoryId<<L V
-,<<V W
-	productId<<X a
-)<<a b
-;<<b c
-if== 
-(== 
-productEntity== 
-====  
-null==! %
-)==% &
-{>> 
-throw?? 
-new?? !
-NotFoundItemException?? /
-(??/ 0
-$"??0 2
-$str??2 G
-{??G H
-	productId??H Q
-}??Q R
-$str??R v
-{??v w
-
-categoryId	??w Å
+newProduct; E
+)E F
+;F G!
+_pastryShopRepository !
+.! "
+CreateProduct" /
+(/ 0
+categoriyId0 ;
+,; <
+productEntity= J
+)J K
+;K L
+var 
+result 
+= 
+await !
+_pastryShopRepository 4
+.4 5
+SaveChangesAsync5 E
+(E F
+)F G
+;G H
+if!! 
+(!! 
+!!! 
+result!! 
+)!! 
+{"" 
+throw## 
+new## !
+ArgumentNullException## /
+(##/ 0
+$str##0 5
+)##5 6
+;##6 7
+}$$ 
+return&& 
+_mapper&& 
+.&& 
+Map&& 
+<&& 
+ProductModel&& +
+>&&+ ,
+(&&, -
+productEntity&&- :
+)&&: ;
+;&&; <
+}'' 	
+public)) 
+async)) 
+Task)) 
+<)) 
+bool)) 
+>)) 
+DeleteProductAsync))  2
+())2 3
+long))3 7
+categoriyId))8 C
+,))C D
+long))E I
+	productId))J S
+)))S T
+{** 	&
+ValidateCategoryAndProduct++ &
+(++& '
+categoriyId++' 2
+,++2 3
+	productId++4 =
+)++= >
+;++> ?
+await,, !
+_pastryShopRepository,, '
+.,,' (
+DeleteProductAsync,,( :
+(,,: ;
+categoriyId,,; F
+,,,F G
+	productId,,H Q
+),,Q R
+;,,R S
+var.. 
+result.. 
+=.. 
+await.. !
+_pastryShopRepository.. 4
+...4 5
+SaveChangesAsync..5 E
+(..E F
+)..F G
+;..G H
+if00 
+(00 
+!00 
+result00 
+)00 
+{11 
+throw22 
+new22 !
+ArgumentNullException22 /
+(22/ 0
+$str220 5
+)225 6
+;226 7
+}33 
+return55 
+true55 
+;55 
+}66 	
+public88 
+async88 
+Task88 
+<88 
+ProductModel88 &
+>88& '
+GetProductAsync88( 7
+(887 8
+long888 <
+categoriyId88= H
+,88H I
+long88J N
+	productId88O X
+)88X Y
+{99 	
+await:: !
+ValidateCategoryAsync:: '
+(::' (
+categoriyId::( 3
+)::3 4
+;::4 5
+var;; 
+productEntity;; 
+=;; 
+await;;  %!
+_pastryShopRepository;;& ;
+.;;; <
+GetProductAsync;;< K
+(;;K L
+categoriyId;;L W
+,;;W X
+	productId;;Y b
+);;b c
+;;;c d
+if<< 
+(<< 
+productEntity<< 
+==<<  
+null<<! %
+)<<% &
+{== 
+throw>> 
+new>> !
+NotFoundItemException>> /
+(>>/ 0
+$">>0 2
+$str>>2 G
+{>>G H
+	productId>>H Q
+}>>Q R
+$str>>R v
+{>>v w
+categoriyId	>>w Ç
 }
-??Å Ç
+>>Ç É
 $str
-??Ç É
+>>É Ñ
 "
-??É Ñ
+>>Ñ Ö
 )
-??Ñ Ö
+>>Ö Ü
 ;
-??Ö Ü
-}@@ 
-varBB 
-productModelBB 
-=BB 
-_mapperBB &
-.BB& '
-MapBB' *
-<BB* +
-ProductModelBB+ 7
->BB7 8
-(BB8 9
-productEntityBB9 F
-)BBF G
-;BBG H
-productModelDD 
-.DD 
-IdDD 
-=DD 
-
-categoryIdDD (
-;DD( )
-returnEE 
-productModelEE 
-;EE  
-}FF 	
-publicHH 
-asyncHH 
-TaskHH 
-<HH 
-IEnumerableHH %
-<HH% &
-ProductModelHH& 2
->HH2 3
->HH3 4
-GetProductsAsyncHH5 E
-(HHE F
-longHHF J
-
-categoryIdHHK U
-)HHU V
-{II 	
-awaitJJ !
-ValidateCategoryAsyncJJ '
-(JJ' (
-
-categoryIdJJ( 2
-)JJ2 3
-;JJ3 4
-varKK 
-productsKK 
-=KK 
-awaitKK  !
-_pastryShopRepositoryKK! 6
-.KK6 7
-GetProductsAsyncKK7 G
-(KKG H
-
-categoryIdKKH R
-)KKR S
-;KKS T
-returnLL 
-_mapperLL 
-.LL 
-MapLL 
-<LL 
-IEnumerableLL *
-<LL* +
-ProductModelLL+ 7
->LL7 8
->LL8 9
-(LL9 :
-productsLL: B
-)LLB C
-;LLC D
-}MM 	
-publicOO 
-asyncOO 
-TaskOO 
-<OO 
-ProductModelOO &
->OO& '
-UpdateProductAsyncOO( :
-(OO: ;
-longOO; ?
-
-categoryIdOO@ J
-,OOJ K
-longOOL P
-	productIdOOQ Z
-,OOZ [
-ProductModelOO\ h
-updatedProductOOi w
-)OOw x
-{PP 	
-awaitQQ +
-ValidateCategoryAndProductAsyncQQ 1
-(QQ1 2
-
-categoryIdQQ2 <
-,QQ< =
-	productIdQQ> G
-)QQG H
-;QQH I
-awaitRR !
-_pastryShopRepositoryRR '
-.RR' (
-UpdateProductAsyncRR( :
-(RR: ;
-
-categoryIdRR; E
-,RRE F
-	productIdRRG P
-,RRP Q
-_mapperRRR Y
-.RRY Z
-MapRRZ ]
-<RR] ^
-ProductEntityRR^ k
->RRk l
-(RRl m
-updatedProductRRm {
-)RR{ |
-)RR| }
-;RR} ~
-varSS 
-resultSS 
-=SS 
-awaitSS !
-_pastryShopRepositorySS 4
-.SS4 5
-SaveChangesAsyncSS5 E
-(SSE F
-)SSF G
-;SSG H
-ifUU 
-(UU 
-!UU 
-resultUU 
-)UU 
-{VV 
-throwWW 
-newWW 
-	ExceptionWW #
-(WW# $
-$strWW$ 4
-)WW4 5
-;WW5 6
-}XX 
-returnZZ 
-updatedProductZZ !
-;ZZ! "
-}[[ 	
-private]] 
-async]] 
-Task]] !
-ValidateCategoryAsync]] 0
-(]]0 1
-long]]1 5
-
-categoryId]]6 @
-)]]@ A
-{^^ 	
-var__ 
-category__ 
-=__ 
-await__  !
-_pastryShopRepository__! 6
-.__6 7
-GetCategoryAsync__7 G
-(__G H
-
-categoryId__H R
-)__R S
-;__S T
-if`` 
-(`` 
-category`` 
-==`` 
-null``  
-)``  !
-{aa 
-throwbb 
-newbb !
-NotFoundItemExceptionbb /
-(bb/ 0
-$"bb0 2
-$strbb2 H
-{bbH I
-
-categoryIdbbI S
-}bbS T
-$strbbT e
-"bbe f
-)bbf g
-;bbg h
-}cc 
-}dd 	
-privateff 
-asyncff 
-Taskff +
-ValidateCategoryAndProductAsyncff :
-(ff: ;
-longff; ?
-
-categoryIdff@ J
-,ffJ K
-longffL P
-	productIdffQ Z
-)ffZ [
-{gg 	
-varhh 
-producthh 
-=hh 
-awaithh 
-GetProductAsynchh  /
-(hh/ 0
-
-categoryIdhh0 :
-,hh: ;
-	productIdhh< E
-)hhE F
-;hhF G
-}ii 	
-publicll 
-asyncll 
-Taskll 
-<ll 
-IEnumerablell %
-<ll% &
-ProductModelll& 2
->ll2 3
->ll3 4
-GetAllProductsAsyncll5 H
-(llH I
-longllI M
-
-categoryIdllN X
-)llX Y
-{mm 	
-awaitnn !
-ValidateCategoryAsyncnn '
-(nn' (
-
-categoryIdnn( 2
-)nn2 3
-;nn3 4
-varoo 
-productsoo 
-=oo 
-awaitoo  !
-_pastryShopRepositoryoo! 6
-.oo6 7
-GetAllProductsAsyncoo7 J
-(ooJ K
-)ooK L
-;ooL M
-returnpp 
-_mapperpp 
-.pp 
-Mappp 
-<pp 
-IEnumerablepp *
-<pp* +
-ProductModelpp+ 7
->pp7 8
->pp8 9
-(pp9 :
-productspp: B
-)ppB C
-;ppC D
-}qq 	
-}rr 
-}ss ™	
+>>Ü á
+}?? 
+varAA 
+productModelAA 
+=AA 
+_mapperAA &
+.AA& '
+MapAA' *
+<AA* +
+ProductModelAA+ 7
+>AA7 8
+(AA8 9
+productEntityAA9 F
+)AAF G
+;AAG H
+productModelCC 
+.CC 
+IdCC 
+=CC 
+categoriyIdCC )
+;CC) *
+returnDD 
+productModelDD 
+;DD  
+}EE 	
+publicGG 
+asyncGG 
+TaskGG 
+<GG 
+IEnumerableGG %
+<GG% &
+ProductModelGG& 2
+>GG2 3
+>GG3 4
+GetProductsAsyncGG5 E
+(GGE F
+longGGF J
+categoriyIdGGK V
+)GGV W
+{HH 	
+awaitII !
+ValidateCategoryAsyncII '
+(II' (
+categoriyIdII( 3
+)II3 4
+;II4 5
+varJJ 
+productsJJ 
+=JJ 
+awaitJJ  !
+_pastryShopRepositoryJJ! 6
+.JJ6 7
+GetProductsAsyncJJ7 G
+(JJG H
+categoriyIdJJH S
+)JJS T
+;JJT U
+returnKK 
+_mapperKK 
+.KK 
+MapKK 
+<KK 
+IEnumerableKK *
+<KK* +
+ProductModelKK+ 7
+>KK7 8
+>KK8 9
+(KK9 :
+productsKK: B
+)KKB C
+;KKC D
+}LL 	
+publicNN 
+asyncNN 
+TaskNN 
+<NN 
+ProductModelNN &
+>NN& '
+UpdateProductAsyncNN( :
+(NN: ;
+longNN; ?
+categoriyIdNN@ K
+,NNK L
+longNNM Q
+	productIdNNR [
+,NN[ \
+ProductModelNN] i
+updatedProductNNj x
+)NNx y
+{OO 	&
+ValidateCategoryAndProductPP &
+(PP& '
+categoriyIdPP' 2
+,PP2 3
+	productIdPP4 =
+)PP= >
+;PP> ?
+awaitQQ !
+_pastryShopRepositoryQQ '
+.QQ' (
+UpdateProductAsyncQQ( :
+(QQ: ;
+categoriyIdQQ; F
+,QQF G
+	productIdQQH Q
+,QQQ R
+_mapperQQS Z
+.QQZ [
+MapQQ[ ^
+<QQ^ _
+ProductEntityQQ_ l
+>QQl m
+(QQm n
+updatedProductQQn |
+)QQ| }
+)QQ} ~
+;QQ~ 
+varRR 
+resultRR 
+=RR 
+awaitRR !
+_pastryShopRepositoryRR 4
+.RR4 5
+SaveChangesAsyncRR5 E
+(RRE F
+)RRF G
+;RRG H
+ifTT 
+(TT 
+!TT 
+resultTT 
+)TT 
+{UU 
+throwVV 
+newVV !
+ArgumentNullExceptionVV /
+(VV/ 0
+$strVV0 5
+)VV5 6
+;VV6 7
+}WW 
+returnYY 
+updatedProductYY !
+;YY! "
+}ZZ 	
+private\\ 
+async\\ 
+Task\\ !
+ValidateCategoryAsync\\ 0
+(\\0 1
+long\\1 5
+categoriyId\\6 A
+)\\A B
+{]] 	
+var^^ 
+category^^ 
+=^^ 
+await^^  !
+_pastryShopRepository^^! 6
+.^^6 7
+GetCategoryAsync^^7 G
+(^^G H
+categoriyId^^H S
+)^^S T
+;^^T U
+if__ 
+(__ 
+category__ 
+==__ 
+null__  
+)__  !
+{`` 
+throwaa 
+newaa !
+NotFoundItemExceptionaa /
+(aa/ 0
+$"aa0 2
+$straa2 H
+{aaH I
+categoriyIdaaI T
+}aaT U
+$straaU f
+"aaf g
+)aag h
+;aah i
+}bb 
+}cc 	
+privateee 
+voidee &
+ValidateCategoryAndProductee /
+(ee/ 0
+longee0 4
+categoriyIdee5 @
+,ee@ A
+longeeB F
+	productIdeeG P
+)eeP Q
+{ff 	
+}hh 	
+publickk 
+asynckk 
+Taskkk 
+<kk 
+IEnumerablekk %
+<kk% &
+ProductModelkk& 2
+>kk2 3
+>kk3 4
+GetAllProductsAsynckk5 H
+(kkH I
+longkkI M
+categoriyIdkkN Y
+)kkY Z
+{ll 	
+awaitmm !
+ValidateCategoryAsyncmm '
+(mm' (
+categoriyIdmm( 3
+)mm3 4
+;mm4 5
+varnn 
+productsnn 
+=nn 
+awaitnn  !
+_pastryShopRepositorynn! 6
+.nn6 7
+GetAllProductsAsyncnn7 J
+(nnJ K
+)nnK L
+;nnL M
+returnoo 
+_mapperoo 
+.oo 
+Mapoo 
+<oo 
+IEnumerableoo *
+<oo* +
+ProductModeloo+ 7
+>oo7 8
+>oo8 9
+(oo9 :
+productsoo: B
+)ooB C
+;ooC D
+}pp 	
+}qq 
+}rr ™	
 sE:\Final-Project-WebTechnologies-main - copia\Backend\PastryShopAPI\PastryShopAPI\Services\Security\IUserService.cs
 	namespace 	
 PastryShopAPI

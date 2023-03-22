@@ -19,7 +19,6 @@ namespace PastryShopAPI.Services
             _mapper = mapper;
         }
 
-
         public async Task<ProductModel> CreateProductAsync(long categoriyId, ProductModel newProduct)
         {
             await ValidateCategoryAsync(categoriyId);
@@ -30,11 +29,6 @@ namespace PastryShopAPI.Services
 
             var result = await _pastryShopRepository.SaveChangesAsync();
 
-            if (!result)
-            {
-                throw new ArgumentNullException("obj");
-            }
-
             return _mapper.Map<ProductModel>(productEntity);
         }
 
@@ -44,11 +38,6 @@ namespace PastryShopAPI.Services
             await _pastryShopRepository.DeleteProductAsync(categoriyId, productId);
 
             var result = await _pastryShopRepository.SaveChangesAsync();
-
-            if (!result)
-            {
-                throw new ArgumentNullException("obj");
-            }
 
             return true;
         }
@@ -81,11 +70,6 @@ namespace PastryShopAPI.Services
             await _pastryShopRepository.UpdateProductAsync(categoriyId, productId, _mapper.Map<ProductEntity>(updatedProduct));
             var result = await _pastryShopRepository.SaveChangesAsync();
 
-            if (!result)
-            {
-                throw new ArgumentNullException("obj");
-            }
-
             return updatedProduct;
         }
 
@@ -100,7 +84,7 @@ namespace PastryShopAPI.Services
 
         private void ValidateCategoryAndProduct(long categoriyId, long productId)
         {
-            //var product = await GetProductAsync(categoriyId, productId);
+            
         }
 
         // FOR COMBOS Creation
