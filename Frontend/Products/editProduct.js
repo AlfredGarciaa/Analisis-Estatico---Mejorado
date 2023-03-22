@@ -180,3 +180,5 @@ window.addEventListener('DOMContentLoaded', function(event){
     fetchProduct(productId);
     
 });
+
+//
