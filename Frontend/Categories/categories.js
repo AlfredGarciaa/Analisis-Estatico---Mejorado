@@ -51,6 +51,7 @@ window.addEventListener('DOMContentLoaded', function(event){
     async function fetchCategories()
     {
         const url = `${baseUrl}/categories`;
+        let errorText = ""
         let response = await fetch(url, { 
             method: 'GET',
             "Authorization": `Bearer ${sessionStorage.getItem("jwt")}`  // AUTHORIZATION:  Encoded Token JWT
@@ -113,11 +114,11 @@ window.addEventListener('DOMContentLoaded', function(event){
                 specific_filter_btn.addEventListener('click', cardsSpecificFilter)
                 
             } else {
-                var errorText = await response.text();
+                errorText = await response.text();
                 alert(errorText);
             }
         } catch(error){
-            var errorText = await error.text;
+            errorText = await error.text;
         }
     }
 
