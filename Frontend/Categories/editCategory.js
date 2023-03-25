@@ -27,9 +27,6 @@ window.addEventListener('DOMContentLoaded', function(event){
         let description = document.querySelector('#description_input').value;
         let imageFile = document.querySelector('#form-wrapper #post-form .property-wrapper .custom-file-input').files[0];
         let imageUrl = document.querySelector('#image_input').value;
-        /*if(!validProperties(name, description, imageUrl, imageFile)){
-            return;
-        }*/
         
         const formData = new FormData();
         formData.append('Name', name);
@@ -37,17 +34,14 @@ window.addEventListener('DOMContentLoaded', function(event){
         formData.append('ImageURL',imageUrl);
         formData.append('Image', imageFile);
         
-        let url = `${baseUrl}/categories/${categoryId}/Form`;//`${baseUrl}/categories/${productId}`;
+        let url = `${baseUrl}/categories/${categoryId}/Form`;
         fetch(url, { 
             method: 'PUT',
             body: formData
             }).then((data)=>{
                 if(data.status === 200){
-                    //debugger;
-                    //window.location.href = "http://127.0.0.1:5500/";
                     alert('edited');
-                    window.location.href = "categories.html";//"http://127.0.0.1:5500/";
-                    //window.location.reload(); //Reloads the page
+                    window.location.href = "categories.html";
                 } else {
                     data.text()
                     .then((error)=>{
@@ -58,15 +52,13 @@ window.addEventListener('DOMContentLoaded', function(event){
                 }
             });/*.catch((errormessage) => {
                 alert(errormessage);
-            });*/
-        
-        //window.location.href = "http://127.0.0.1:5500/";
+            });*/   
     }
     
     async function fetchCategory()
     {//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6I…ldCJ9.txBWs5oV-j-mRnivMzsKSBIqqA--xzXdr4D0NDSzgHI
         //debugger;
-        const url = `${baseUrl}/categories/${categoryId}`;//`${baseUrl}/categories/${productId}`;
+        const url = `${baseUrl}/categories/${categoryId}`;
         let jwtoken = sessionStorage.getItem("jwt");
         let response = await fetch(url, {
             headers: { 
@@ -78,7 +70,6 @@ window.addEventListener('DOMContentLoaded', function(event){
         try{
             if(response.status == 200){
                 let category = await response.json();
-                //debugger;
                 let backImageUrl = category.imagePath? 
                     `${baseRawUrl}/${category.imagePath}`.replace(/\\/g, "/") : category.imageUrl;
                 let categoryCard = `
@@ -111,8 +102,6 @@ window.addEventListener('DOMContentLoaded', function(event){
                         </div>
                     </div>
                 `;
-                //debugger;
-                //var productContent = productCard.join('');
                 document.querySelector('#form-wrapper').innerHTML = categoryCard;
                 
                 let editButton = document.querySelector('.edit-submit'); /*.delete-btn[data-delete-product-id]*/ 
@@ -120,7 +109,6 @@ window.addEventListener('DOMContentLoaded', function(event){
                 
             } else {
                 var errorText = await response.text();
-                //alert(errorText);
             }
         } catch(error){
             var errorText = await error.text;
@@ -132,7 +120,5 @@ window.addEventListener('DOMContentLoaded', function(event){
     const baseUrl = 'http://localhost:3030/api';
     var queryParams = window.location.search.split('?');
     var categoryId= queryParams[1].split('=')[1];
-    // alert(categoryId);
     fetchCategory(categoryId);
-    
 });
