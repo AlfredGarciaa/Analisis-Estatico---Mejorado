@@ -94,17 +94,17 @@ window.addEventListener('DOMContentLoaded', function(event){
                 editButton.addEventListener('click', editProduct);
                 
             } else {
-                var errorText = await response.text();
+                let errorText = await response.text();
                 alert(errorText);
             }
         } catch(error){
-            var errorText = await error.text();
+            let errorText = await error.text();
             alert(errorText);
         }
     }
 
     const baseUrl = 'http://localhost:3030/api';
-    var queryParams = window.location.search.split('?');
-    var productId= queryParams[1].split('=')[1];
+    let queryParams = window.location.search.split('?');
+    let productId= queryParams[1].split('=')[1];
     fetchProduct(productId);
 });
