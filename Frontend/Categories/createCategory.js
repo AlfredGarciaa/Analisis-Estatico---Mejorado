@@ -51,14 +51,11 @@ window.addEventListener('DOMContentLoaded', function(event){
                 });
             }
         });
-        // fetchTeams();
     }
 
     async function fetchCategory()
     {
-        //let response = await fetch(url);
         debugger;
-                //let product = await response.json();
         let productCard = `
             <div id="form-image" style="background: url(https://images.unsplash.com/photo-1598903910670-321f09e94b42?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80)">
             </div>
@@ -89,7 +86,6 @@ window.addEventListener('DOMContentLoaded', function(event){
                 </div>
             </div>
         `;
-        //var productContent = productCard.join('');
         document.querySelector('#form-wrapper').innerHTML = productCard;
         
         let createButton = document.querySelector('#post-form .create-submit'); /*.delete-btn[data-delete-product-id]*/ 
@@ -97,10 +93,6 @@ window.addEventListener('DOMContentLoaded', function(event){
         //createButton.addEventListener('click', createCategory);PostFormCategory
     }
 
-
-    //debugger;
     const baseUrl = 'http://localhost:3030/api';
-    // alert(productId);
     fetchCategory();
-    
 });
