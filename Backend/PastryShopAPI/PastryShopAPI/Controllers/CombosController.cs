@@ -112,7 +112,7 @@ namespace PastryShopAPI.Controllers
                     var totalPrice = await _combosService.CalculateComboPrice(product_comboModel.ComboId);// calculate combo price
                     var combo = await _combosService.GetComboAsync(product_comboModel.ComboId);
                     combo.Price = totalPrice;
-                    await _combosService.UpdateComboAsync(combo);// Edit combo with  new price (hacerlo todo de una en el service o nox)
+                    await _combosService.UpdateComboAsync(combo);// Edit combo with  new price
 
                     return Ok(result);
                 }
