@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System;
+using PastryShopAPI.Exceptions;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
@@ -14,9 +15,9 @@ namespace PastryShopAPI.Services.Security
 {
     public class UserService: IUserService
     {
-        private UserManager<IdentityUser> userManager;
-        private RoleManager<IdentityRole> roleManager;
-        private IConfiguration configuration;
+        private readonly UserManager<IdentityUser> userManager;
+        private readonly RoleManager<IdentityRole> roleManager;
+        private readonly IConfiguration configuration;
 
         public UserService(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration)
         {
@@ -85,7 +86,7 @@ namespace PastryShopAPI.Services.Security
         {
             if (model == null)
             {
-                throw new NullReferenceException("model is null");
+                throw new InvalidOperationItemException("model is null");
             }
 
             if (model.Password != model.ConfirmPassword)
@@ -162,7 +163,7 @@ namespace PastryShopAPI.Services.Security
             }
 
             var user = await userManager.FindByIdAsync(model.UserId);
-            if (role == null)
+            if (user == null)
             {
                 return new UserManagerResponse
                 {
