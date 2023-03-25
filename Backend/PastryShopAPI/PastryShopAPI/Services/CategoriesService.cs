@@ -73,12 +73,12 @@ namespace PastryShopAPI.Services
             }
 
 
-            return _mapper.Map<CategoryModel>(category); // _mapper.Map<CategoryFormModel>(category);
+            return _mapper.Map<CategoryModel>(category);
         }
 
         public async Task<CategoryModel> UpdateCategoryAsync(long categoryId, CategoryModel updatedCategory)
         {
-            await ValidateCategoryAsync(categoryId);// GetTeamAsync(teamId);
+            await ValidateCategoryAsync(categoryId);
             updatedCategory.Id = categoryId;
             await _pastryShopRepository.UpdateCategoryAsync(categoryId, _mapper.Map<CategoryEntity>(updatedCategory));
             var result = await _pastryShopRepository.SaveChangesAsync();
@@ -88,12 +88,11 @@ namespace PastryShopAPI.Services
                 throw new Exception("Database Error");
             }
 
-            return updatedCategory;//_mapper.Map<CategoryModel>(updatedCategory);
+            return updatedCategory;
         }
 
         private async Task ValidateCategoryAsync(long categoryId)
         {
-            // await GetCategoryAsync(teamId);
             var category = await _pastryShopRepository.GetCategoryAsync(categoryId);
 
             if (category == null)
