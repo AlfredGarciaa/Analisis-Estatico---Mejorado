@@ -106,5 +106,5 @@ window.addEventListener('DOMContentLoaded', function(event){
     const baseUrl = 'http://localhost:3030/api';
     let queryParams = window.location.search.split('?');
     let productId= queryParams[1].split('=')[1];
-    fetchProduct(productId);
+    fetchProduct();
 });
