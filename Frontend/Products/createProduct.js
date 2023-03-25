@@ -80,7 +80,6 @@ window.addEventListener('DOMContentLoaded', function(event){
     
     async function fetchProduct()
     {
-        const url = `${baseUrl}/products/`;
         let productCard = `
             <div id="form-image" style="background: url(https://images.unsplash.com/photo-1598903910670-321f09e94b42?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80)">
             </div>
