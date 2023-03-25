@@ -10,38 +10,6 @@ window.addEventListener('DOMContentLoaded', function(event){
             return true;
         }
     }
-    async function createProduct(event)
-    {
-        debugger;
-        let name = document.querySelector('#name_input').value;
-        let description = document.querySelector('#description_input').value;
-        let price = +document.querySelector('#price_input').value;
-        let image = document.querySelector('#image_input').value;
-
-        if(!validProperties(name, description, price, image)){
-            return;
-        }
-        let url = `${baseUrl}/products/`;//`${baseUrl}/categories/`;
-        let data = await fetch(url, { 
-                headers: { "Content-Type": "application/json; charset=utf-8" },
-                method: 'POST',
-                body: JSON.stringify({
-                    Name: name,
-                    Description: description,
-                    Price: price,
-                    ImageUrl: image
-                })
-            });
-        try {
-            if(data.status === 201){
-                alert('Created');
-                window.location.href = `../Products/products.html?categoryId=${categoryId}`;//"http://127.0.0.1:5500/";
-            }
-        } catch(error){
-            var errorText = await error.text();
-            alert(errorText);
-        }
-    }
 
     async function createFormProduct(event)
     {
