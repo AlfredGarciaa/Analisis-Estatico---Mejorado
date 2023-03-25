@@ -10,7 +10,7 @@ namespace PastryShopAPI.Services
 {
     public class CategoriesService : ICategoriesService
     {
-        private IPastryShopRepository _pastryShopRepository;
+        readonly IPastryShopRepository _pastryShopRepository;
         private IMapper _mapper;
 
         private HashSet<string> _allowedOrderByValues = new HashSet<string>()
