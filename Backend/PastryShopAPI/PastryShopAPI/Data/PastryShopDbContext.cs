@@ -43,11 +43,6 @@ namespace PastryShopAPI.Data
             // Many to Many relationship is defined in the Product_Combo Entity modelBuilder.
 
 
-            // ====== Key definitions Product_Combo ======
-            /*modelBuilder.Entity<Product_ComboEntity>()
-            .HasKey(bc => new { bc.ProductId, bc.ComboId });*/
-
-
             // ====== Combos - Products (M-->M) ======
             modelBuilder.Entity<Product_ComboEntity>()
             .HasOne(p => p.Product)
