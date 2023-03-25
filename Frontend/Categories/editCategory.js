@@ -19,38 +19,6 @@ window.addEventListener('DOMContentLoaded', function(event){
         }
     }
     
-    function editCategory(){
-        debugger;
-        let name = document.querySelector('#name_input').value;
-        let description = document.querySelector('#description_input').value;
-        let image = document.querySelector('#image_input').value;
-
-        if(!validProperties(name, description, image)){
-            return;
-        }
-        let url = `${baseUrl}/categories/${categoryId}`;//`${baseUrl}/categories/${productId}`;
-        fetch(url, { 
-            headers: { "Content-Type": "application/json; charset=utf-8" },
-            method: 'PUT',
-            body: JSON.stringify({
-                Name: name,
-                Description: description,
-                ImageUrl: image
-            })
-            }).then((data)=>{
-                if(data.status === 200){
-                    //debugger;
-                    //window.location.href = "http://127.0.0.1:5500/";
-                    alert('edited');
-                    window.location.href = "categories.html";//"http://127.0.0.1:5500/";
-                    //window.location.reload(); //Reloads the page
-                }
-            }).catch((errormessage) => {
-                alert(errormessage);
-            });
-        
-        //window.location.href = "http://127.0.0.1:5500/";
-    }
 
     function editFormCategory()
     {
