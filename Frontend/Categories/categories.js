@@ -113,9 +113,6 @@ window.addEventListener('DOMContentLoaded', function(event){
                 let specific_filter_btn = document.querySelector('#specific-filter-btn');
                 specific_filter_btn.addEventListener('click', cardsSpecificFilter)
                 
-            } else {
-                errorText = await response.text();
-                alert(errorText);
             }
         } catch(error){
             errorText = await error.text;
