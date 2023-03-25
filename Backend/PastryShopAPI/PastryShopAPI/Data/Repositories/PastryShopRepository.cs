@@ -15,7 +15,7 @@ namespace PastryShopAPI.Data.Repositories
         {
             _dbContext = dbContext;
         }
-        // ================================ CATEGORIES =======================================
+        
         public void CreateCategory(CategoryEntity newCategory)
         {
             _dbContext.Categories.Add(newCategory);
@@ -40,10 +40,7 @@ namespace PastryShopAPI.Data.Repositories
                 case "description":
                     query = query.OrderBy(c => c.Description);
                     break;
-                /*
-                case "flavors":
-                    query = query.OrderBy(c => c.Flavors);
-                    break;*/
+              
                 default:
                     query = query.OrderBy(c => c.Id);
                     break;
@@ -60,22 +57,14 @@ namespace PastryShopAPI.Data.Repositories
             category.Description = updatedCategory.Description ?? category.Description;
             category.ImageUrl = updatedCategory.ImageUrl ?? category.ImageUrl;
             category.ImagePath = updatedCategory.ImagePath ?? category.ImagePath;
-            // category.Flavors = updatedCategory.Flavors ?? category.Flavors;
         }
         public async Task<CategoryEntity> GetCategoryAsync(long categoryId)
         {
             IQueryable<CategoryEntity> query = _dbContext.Categories;
             query = query.AsNoTracking();
-            //query = query.Include(t => t.Products);
+            
             return await query.FirstOrDefaultAsync(c => c.Id == categoryId);
 
-            //hit to database
-            //tolist()
-            //toArray()
-            //foreach
-            //firstOfDefaul
-            //Single
-            //Count
         }
         public async Task<bool> SaveChangesAsync()
         {
@@ -91,7 +80,6 @@ namespace PastryShopAPI.Data.Repositories
             }
         }
 
-        // ================================ PRODUCTS =======================================
         public async Task<IEnumerable<ProductEntity>> GetProductsAsync(long categoryId)
         {
             IQueryable<ProductEntity> query = _dbContext.Products;
@@ -105,7 +93,6 @@ namespace PastryShopAPI.Data.Repositories
         {
             IQueryable<ProductEntity> query = _dbContext.Products;
             query = query.AsNoTracking();
-            //query = query.Include(p => p.Team);
             return await query.FirstOrDefaultAsync(p => p.Category.Id == categoryId && p.Id == productId);
         }
 
@@ -113,7 +100,6 @@ namespace PastryShopAPI.Data.Repositories
         {
             IQueryable<ProductEntity> query = _dbContext.Products;
             query = query.AsNoTracking();
-            //query = query.Include(p => p.Team);
             return await query.FirstOrDefaultAsync(p => p.Id == productId);
         }
 
@@ -148,7 +134,6 @@ namespace PastryShopAPI.Data.Repositories
         }
 
 
-        // ================================ COMBOS =======================================
         public void CreateCombo(ComboEntity comboEntity)
         {
             _dbContext.Combos.Add(comboEntity);
@@ -167,7 +152,6 @@ namespace PastryShopAPI.Data.Repositories
         {
             IQueryable<ComboEntity> query = _dbContext.Combos;
             query = query.AsNoTracking();
-            //query = query.Include(t => t.Products);
             return await query.FirstOrDefaultAsync(c => c.Id == comboId);
         }
 
@@ -203,7 +187,6 @@ namespace PastryShopAPI.Data.Repositories
         }
         
 
-        // ==== COMBOS - PRODUCTS  (MANY to MANY) ====
         public void AddProduct_to_ComboAsync(Product_ComboEntity newProductCombo)
         {
             _dbContext.Products.Add(newProductCombo.Product);
@@ -213,7 +196,6 @@ namespace PastryShopAPI.Data.Repositories
             _dbContext.Combos.Attach(newProductCombo.Combo);
 
             _dbContext.Product_Combos.Add(newProductCombo);
-            //newProductCombo.Product.Product_Combos.Add(newProductCombo);
 
         }
 
