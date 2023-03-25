@@ -70,9 +70,9 @@ vE:\Final-Project-WebTechnologies-main - copia\Backend\PastryShopAPI\PastryShopA
 xE:\Final-Project-WebTechnologies-main - copia\Backend\PastryShopAPI\PastryShopAPI\Models\Security\UserManagerResponse.cs 8r	
 á
 \E:\Final-Project-WebTechnologies-main - copia\Backend\PastryShopAPI\PastryShopAPI\Program.cs 8r
-Ç˝
-oE:\Final-Project-WebTechnologies-main - copia\Backend\PastryShopAPI\PastryShopAPI\Services\CategoriesService.cs! 8jLQ[`rV	
- !"$%&')*,-./02345679:;<=>?@BCDFGHILMOPQRSTVWXY[\^_acdefghixÇ! !"$&)./0246;<=>?DFHLQRSTVX[ace˝
+Ç˜
+oE:\Final-Project-WebTechnologies-main - copia\Backend\PastryShopAPI\PastryShopAPI\Services\CategoriesService.cs! 8rV	
+ !"$%&')*,-./02345679:;<=>?@BCDFGHILMOPQRSTVWXY[\^_`bcdefghxÇ! !"$&)./0246;<=>?DFHLQRSTVX[`bd˝
 rE:\Final-Project-WebTechnologies-main - copia\Backend\PastryShopAPI\PastryShopAPI\Services\Combos\CombosService.cs2 	8j;>@ANUXjtvô¢r™	
 !"#$&'*+,-./1235678;<>?BCEFGHJKQRSTUVYZ[\]^_`abcdefghklmnopqruwxz{|}~ÄÅÇÉÖÜáàâäåçéèëíìîïñóòôöúùû†°£•¶ß®©™´x	Ç=!#&,-.357;BCEGJSTUVY[ackmuwxz{|~Öéîïñòôöù£•ßí
 sE:\Final-Project-WebTechnologies-main - copia\Backend\PastryShopAPI\PastryShopAPI\Services\Combos\ICombosService.csjr	

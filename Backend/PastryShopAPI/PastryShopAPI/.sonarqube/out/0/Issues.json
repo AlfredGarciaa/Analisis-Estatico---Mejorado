@@ -201,55 +201,6 @@
           }
         },
         {
-          "ruleId": "S3925",
-          "level": "warning",
-          "message": "Update this implementation of 'ISerializable' to conform to the recommended serialization pattern.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Exceptions/InvalidOperationItemException.cs",
-                "region": {
-                  "startLine": 8,
-                  "startColumn": 18,
-                  "endLine": 8,
-                  "endColumn": 47
-                }
-              }
-            }
-          ],
-          "relatedLocations": [
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Exceptions/InvalidOperationItemException.cs",
-                "region": {
-                  "startLine": 8,
-                  "startColumn": 12,
-                  "endLine": 8,
-                  "endColumn": 17
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Exceptions/InvalidOperationItemException.cs",
-                "region": {
-                  "startLine": 8,
-                  "startColumn": 12,
-                  "endLine": 8,
-                  "endColumn": 17
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1,
-            "customProperties": {
-              "0": "Add 'System.SerializableAttribute' attribute on 'InvalidOperationItemException' because it implements 'ISerializable'.",
-              "1": "Add a 'protected' constructor 'InvalidOperationItemException(SerializationInfo, StreamingContext)'."
-            }
-          }
-        },
-        {
           "ruleId": "S125",
           "level": "warning",
           "message": "Remove this commented out code.",
@@ -418,55 +369,6 @@
           }
         },
         {
-          "ruleId": "S3925",
-          "level": "warning",
-          "message": "Update this implementation of 'ISerializable' to conform to the recommended serialization pattern.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Exceptions/NotFoundItemException.cs",
-                "region": {
-                  "startLine": 8,
-                  "startColumn": 18,
-                  "endLine": 8,
-                  "endColumn": 39
-                }
-              }
-            }
-          ],
-          "relatedLocations": [
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Exceptions/NotFoundItemException.cs",
-                "region": {
-                  "startLine": 8,
-                  "startColumn": 12,
-                  "endLine": 8,
-                  "endColumn": 17
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Exceptions/NotFoundItemException.cs",
-                "region": {
-                  "startLine": 8,
-                  "startColumn": 12,
-                  "endLine": 8,
-                  "endColumn": 17
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1,
-            "customProperties": {
-              "0": "Add 'System.SerializableAttribute' attribute on 'NotFoundItemException' because it implements 'ISerializable'.",
-              "1": "Add a 'protected' constructor 'NotFoundItemException(SerializationInfo, StreamingContext)'."
-            }
-          }
-        },
-        {
           "ruleId": "S125",
           "level": "warning",
           "message": "Remove this commented out code.",
@@ -479,27 +381,6 @@
                   "startColumn": 13,
                   "endLine": 216,
                   "endColumn": 75
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1118",
-          "level": "warning",
-          "message": "Add a 'protected' constructor or the 'static' keyword to the class declaration.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Program.cs",
-                "region": {
-                  "startLine": 12,
-                  "startColumn": 18,
-                  "endLine": 12,
-                  "endColumn": 25
                 }
               }
             }
@@ -542,153 +423,6 @@
                   "startColumn": 9,
                   "endLine": 26,
                   "endColumn": 53
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2933",
-          "level": "warning",
-          "message": "Make 'userService' 'readonly'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Controllers/AuthController.cs",
-                "region": {
-                  "startLine": 15,
-                  "startColumn": 30,
-                  "endLine": 15,
-                  "endColumn": 41
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S125",
-          "level": "warning",
-          "message": "Remove this commented out code.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Services/CategoriesService.cs",
-                "region": {
-                  "startLine": 76,
-                  "startColumn": 58,
-                  "endLine": 76,
-                  "endColumn": 102
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S125",
-          "level": "warning",
-          "message": "Remove this commented out code.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Services/CategoriesService.cs",
-                "region": {
-                  "startLine": 81,
-                  "startColumn": 53,
-                  "endLine": 81,
-                  "endColumn": 77
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S125",
-          "level": "warning",
-          "message": "Remove this commented out code.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Services/CategoriesService.cs",
-                "region": {
-                  "startLine": 91,
-                  "startColumn": 36,
-                  "endLine": 91,
-                  "endColumn": 82
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S125",
-          "level": "warning",
-          "message": "Remove this commented out code.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Services/CategoriesService.cs",
-                "region": {
-                  "startLine": 96,
-                  "startColumn": 13,
-                  "endLine": 96,
-                  "endColumn": 47
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2933",
-          "level": "warning",
-          "message": "Make '_combosService' 'readonly'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Controllers/CombosController.cs",
-                "region": {
-                  "startLine": 19,
-                  "startColumn": 32,
-                  "endLine": 19,
-                  "endColumn": 46
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2933",
-          "level": "warning",
-          "message": "Make '_fileService' 'readonly'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Controllers/CombosController.cs",
-                "region": {
-                  "startLine": 20,
-                  "startColumn": 30,
-                  "endLine": 20,
-                  "endColumn": 42
                 }
               }
             }
@@ -824,18 +558,18 @@
           }
         },
         {
-          "ruleId": "S101",
+          "ruleId": "S2933",
           "level": "warning",
-          "message": "Rename class 'Product_ComboEntity' to match pascal case naming rules, consider using 'ProductComboEntity'.",
+          "message": "Make 'userService' 'readonly'.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Data/Entities/Product_ComboEntity.cs",
+                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Controllers/AuthController.cs",
                 "region": {
-                  "startLine": 10,
-                  "startColumn": 18,
-                  "endLine": 10,
-                  "endColumn": 37
+                  "startLine": 15,
+                  "startColumn": 30,
+                  "endLine": 15,
+                  "endColumn": 41
                 }
               }
             }
@@ -866,165 +600,18 @@
           }
         },
         {
-          "ruleId": "S101",
-          "level": "warning",
-          "message": "Rename class 'Product_ComboModel' to match pascal case naming rules, consider using 'ProductComboModel'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Models/Combos/Product_ComboModel.cs",
-                "region": {
-                  "startLine": 8,
-                  "startColumn": 18,
-                  "endLine": 8,
-                  "endColumn": 36
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
           "ruleId": "S2933",
           "level": "warning",
-          "message": "Make '_fileService' 'readonly'.",
+          "message": "Make '_combosService' 'readonly'.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Controllers/CategoriesController.cs",
+                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Controllers/CombosController.cs",
                 "region": {
                   "startLine": 19,
-                  "startColumn": 30,
+                  "startColumn": 32,
                   "endLine": 19,
-                  "endColumn": 42
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2933",
-          "level": "warning",
-          "message": "Make '_pastryShopRepository' 'readonly'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Services/CategoriesService.cs",
-                "region": {
-                  "startLine": 13,
-                  "startColumn": 39,
-                  "endLine": 13,
-                  "endColumn": 60
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2933",
-          "level": "warning",
-          "message": "Make '_mapper' 'readonly'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Services/CategoriesService.cs",
-                "region": {
-                  "startLine": 14,
-                  "startColumn": 25,
-                  "endLine": 14,
-                  "endColumn": 32
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2933",
-          "level": "warning",
-          "message": "Make '_allowedOrderByValues' 'readonly'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Services/CategoriesService.cs",
-                "region": {
-                  "startLine": 16,
-                  "startColumn": 33,
-                  "endLine": 16,
-                  "endColumn": 54
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2933",
-          "level": "warning",
-          "message": "Make '_pastryShopRepository' 'readonly'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Services/Combos/CombosService.cs",
-                "region": {
-                  "startLine": 16,
-                  "startColumn": 39,
-                  "endLine": 16,
-                  "endColumn": 60
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2933",
-          "level": "warning",
-          "message": "Make '_mapper' 'readonly'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Services/Combos/CombosService.cs",
-                "region": {
-                  "startLine": 17,
-                  "startColumn": 25,
-                  "endLine": 17,
-                  "endColumn": 32
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1144",
-          "level": "warning",
-          "message": "Remove the unused private method 'ValidateComboAsync'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Services/Combos/CombosService.cs",
-                "region": {
-                  "startLine": 160,
-                  "startColumn": 9,
-                  "endLine": 169,
-                  "endColumn": 10
+                  "endColumn": 46
                 }
               }
             }
@@ -1061,12 +648,257 @@
           "locations": [
             {
               "resultFile": {
+                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Controllers/CategoriesController.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 30,
+                  "endLine": 19,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2933",
+          "level": "warning",
+          "message": "Make '_fileService' 'readonly'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Controllers/CombosController.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 30,
+                  "endLine": 20,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2933",
+          "level": "warning",
+          "message": "Make '_fileService' 'readonly'.",
+          "locations": [
+            {
+              "resultFile": {
                 "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Controllers/ProductsController.cs",
                 "region": {
                   "startLine": 17,
                   "startColumn": 30,
                   "endLine": 17,
                   "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3925",
+          "level": "warning",
+          "message": "Update this implementation of 'ISerializable' to conform to the recommended serialization pattern.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Exceptions/NotFoundItemException.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 18,
+                  "endLine": 8,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Exceptions/NotFoundItemException.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 12,
+                  "endLine": 8,
+                  "endColumn": 17
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Exceptions/NotFoundItemException.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 12,
+                  "endLine": 8,
+                  "endColumn": 17
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Add 'System.SerializableAttribute' attribute on 'NotFoundItemException' because it implements 'ISerializable'.",
+              "1": "Add a 'protected' constructor 'NotFoundItemException(SerializationInfo, StreamingContext)'."
+            }
+          }
+        },
+        {
+          "ruleId": "S3925",
+          "level": "warning",
+          "message": "Update this implementation of 'ISerializable' to conform to the recommended serialization pattern.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Exceptions/InvalidOperationItemException.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 18,
+                  "endLine": 8,
+                  "endColumn": 47
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Exceptions/InvalidOperationItemException.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 12,
+                  "endLine": 8,
+                  "endColumn": 17
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Exceptions/InvalidOperationItemException.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 12,
+                  "endLine": 8,
+                  "endColumn": 17
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Add 'System.SerializableAttribute' attribute on 'InvalidOperationItemException' because it implements 'ISerializable'.",
+              "1": "Add a 'protected' constructor 'InvalidOperationItemException(SerializationInfo, StreamingContext)'."
+            }
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'Product_ComboEntity' to match pascal case naming rules, consider using 'ProductComboEntity'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Data/Entities/Product_ComboEntity.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 18,
+                  "endLine": 10,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'Product_ComboModel' to match pascal case naming rules, consider using 'ProductComboModel'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Models/Combos/Product_ComboModel.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 18,
+                  "endLine": 8,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1118",
+          "level": "warning",
+          "message": "Add a 'protected' constructor or the 'static' keyword to the class declaration.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Program.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 18,
+                  "endLine": 12,
+                  "endColumn": 25
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2933",
+          "level": "warning",
+          "message": "Make '_pastryShopRepository' 'readonly'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Services/Combos/CombosService.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 39,
+                  "endLine": 16,
+                  "endColumn": 60
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2933",
+          "level": "warning",
+          "message": "Make '_mapper' 'readonly'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Services/Combos/CombosService.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 25,
+                  "endLine": 17,
+                  "endColumn": 32
                 }
               }
             }
@@ -1139,6 +971,27 @@
           }
         },
         {
+          "ruleId": "S1144",
+          "level": "warning",
+          "message": "Remove the unused private method 'ValidateComboAsync'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Services/Combos/CombosService.cs",
+                "region": {
+                  "startLine": 160,
+                  "startColumn": 9,
+                  "endLine": 169,
+                  "endColumn": 10
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
           "ruleId": "S2933",
           "level": "warning",
           "message": "Make '_dbContext' 'readonly'.",
@@ -1151,111 +1004,6 @@
                   "startColumn": 37,
                   "endLine": 13,
                   "endColumn": 47
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S927",
-          "level": "warning",
-          "message": "Rename parameter 'modelBuilder' to 'builder' to match the base class declaration.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Data/PastryShopDbContext.cs",
-                "region": {
-                  "startLine": 24,
-                  "startColumn": 62,
-                  "endLine": 24,
-                  "endColumn": 74
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S5122",
-          "level": "warning",
-          "message": "Make sure this permissive CORS policy is safe here.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Startup.cs",
-                "region": {
-                  "startLine": 88,
-                  "startColumn": 57,
-                  "endLine": 88,
-                  "endColumn": 81
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S927",
-          "level": "warning",
-          "message": "Rename parameter 'newCombo' to 'model' to match the interface declaration.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Services/Combos/CombosService.cs",
-                "region": {
-                  "startLine": 27,
-                  "startColumn": 67,
-                  "endLine": 27,
-                  "endColumn": 75
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S112",
-          "level": "warning",
-          "message": "'System.Exception' should not be thrown by user code.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Services/CategoriesService.cs",
-                "region": {
-                  "startLine": 52,
-                  "startColumn": 23,
-                  "endLine": 52,
-                  "endColumn": 54
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1125",
-          "level": "warning",
-          "message": "Remove the unnecessary Boolean literal(s).",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Services/Combos/CombosService.cs",
-                "region": {
-                  "startLine": 124,
-                  "startColumn": 24,
-                  "endLine": 124,
-                  "endColumn": 31
                 }
               }
             }
@@ -1286,81 +1034,39 @@
           }
         },
         {
-          "ruleId": "S112",
+          "ruleId": "S5122",
           "level": "warning",
-          "message": "'System.Exception' should not be thrown by user code.",
+          "message": "Make sure this permissive CORS policy is safe here.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Services/Combos/CombosService.cs",
-                "region": {
-                  "startLine": 71,
-                  "startColumn": 23,
-                  "endLine": 71,
-                  "endColumn": 54
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S112",
-          "level": "warning",
-          "message": "'System.Exception' should not be thrown by user code.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Services/Combos/CombosService.cs",
-                "region": {
-                  "startLine": 38,
-                  "startColumn": 19,
-                  "endLine": 38,
-                  "endColumn": 50
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S112",
-          "level": "warning",
-          "message": "'System.Exception' should not be thrown by user code.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Services/CategoriesService.cs",
-                "region": {
-                  "startLine": 41,
-                  "startColumn": 19,
-                  "endLine": 41,
-                  "endColumn": 50
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S112",
-          "level": "warning",
-          "message": "'System.Exception' should not be thrown by user code.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Services/CategoriesService.cs",
+                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Startup.cs",
                 "region": {
                   "startLine": 88,
-                  "startColumn": 23,
+                  "startColumn": 57,
                   "endLine": 88,
-                  "endColumn": 54
+                  "endColumn": 81
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3445",
+          "level": "warning",
+          "message": "Consider using 'throw;' to preserve the stack trace.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Data/Repositories/PastryShopRepository.cs",
+                "region": {
+                  "startLine": 90,
+                  "startColumn": 17,
+                  "endLine": 90,
+                  "endColumn": 26
                 }
               }
             }
@@ -1446,6 +1152,132 @@
           }
         },
         {
+          "ruleId": "S927",
+          "level": "warning",
+          "message": "Rename parameter 'newCombo' to 'model' to match the interface declaration.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Services/Combos/CombosService.cs",
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 67,
+                  "endLine": 27,
+                  "endColumn": 75
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S112",
+          "level": "warning",
+          "message": "'System.Exception' should not be thrown by user code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Services/Combos/CombosService.cs",
+                "region": {
+                  "startLine": 38,
+                  "startColumn": 19,
+                  "endLine": 38,
+                  "endColumn": 50
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S112",
+          "level": "warning",
+          "message": "'System.Exception' should not be thrown by user code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Services/Combos/CombosService.cs",
+                "region": {
+                  "startLine": 71,
+                  "startColumn": 23,
+                  "endLine": 71,
+                  "endColumn": 54
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S927",
+          "level": "warning",
+          "message": "Rename parameter 'modelBuilder' to 'builder' to match the base class declaration.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Data/PastryShopDbContext.cs",
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 62,
+                  "endLine": 24,
+                  "endColumn": 74
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1125",
+          "level": "warning",
+          "message": "Remove the unnecessary Boolean literal(s).",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Services/Combos/CombosService.cs",
+                "region": {
+                  "startLine": 124,
+                  "startColumn": 24,
+                  "endLine": 124,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S927",
+          "level": "warning",
+          "message": "Rename parameter 'newComboEntity' to 'comboEntity' to match the interface declaration.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Data/Repositories/PastryShopRepository.cs",
+                "region": {
+                  "startLine": 152,
+                  "startColumn": 45,
+                  "endLine": 152,
+                  "endColumn": 59
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
           "ruleId": "S1066",
           "level": "warning",
           "message": "Merge this if statement with the enclosing one.",
@@ -1471,48 +1303,6 @@
                   "startColumn": 13,
                   "endLine": 17,
                   "endColumn": 15
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S3445",
-          "level": "warning",
-          "message": "Consider using 'throw;' to preserve the stack trace.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Data/Repositories/PastryShopRepository.cs",
-                "region": {
-                  "startLine": 90,
-                  "startColumn": 17,
-                  "endLine": 90,
-                  "endColumn": 26
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S927",
-          "level": "warning",
-          "message": "Rename parameter 'newComboEntity' to 'comboEntity' to match the interface declaration.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/Final-Project-WebTechnologies-main%20-%20copia/Backend/PastryShopAPI/PastryShopAPI/Data/Repositories/PastryShopRepository.cs",
-                "region": {
-                  "startLine": 152,
-                  "startColumn": 45,
-                  "endLine": 152,
-                  "endColumn": 59
                 }
               }
             }

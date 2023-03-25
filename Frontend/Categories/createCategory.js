@@ -10,38 +10,6 @@ window.addEventListener('DOMContentLoaded', function(event){
             return true;
         }
     }
-    async function createCategory(event)
-    {
-        debugger;
-        let name = document.querySelector('#name_input').value;
-        let description = document.querySelector('#description_input').value;
-        //let imageFileButton = document.querySelector('#form-wrapper #post-form .property-wrapper .custom-file-input')
-        let imageURL = document.querySelector('#image_input').value;
-
-        if(!validProperties(name, description, image)){
-            return;
-        }
-
-        let url = `${baseUrl}/categories/`;
-        let data = await fetch(url, { 
-                headers: { "Content-Type": "application/json; charset=utf-8" },
-                method: 'POST',
-                body: JSON.stringify({
-                    Name: name,
-                    Description: description,
-                    ImageUrl: imageURL
-                })
-            });
-        try {
-            if(data.status === 201){
-                alert('Created');
-                window.location.href = "categories.html";//"http://127.0.0.1:5500/";
-            }
-        } catch(error){
-            var errorText = await error.text();
-            alert(errorText);
-        }
-    }
     
     function PostFormCategory(event)
     {
@@ -88,7 +56,6 @@ window.addEventListener('DOMContentLoaded', function(event){
 
     async function fetchCategory()
     {
-        const url = `${baseUrl}/categories/`;
         //let response = await fetch(url);
         debugger;
                 //let product = await response.json();

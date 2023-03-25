@@ -931,24 +931,24 @@ xE:\Final-Project-WebTechnologies-main - copia\Backend\PastryShopAPI\PastryShopA
 ) - "
 # 4 
 > B& *
-* 4 —
+* 4 À
 oE:\Final-Project-WebTechnologies-main - copia\Backend\PastryShopAPI\PastryShopAPI\Services\CategoriesService.cs
 
  "n
-& ; !!! !"" 4// '00 4==# 8DD! 6SS 'TT 4aa! 6F
-    ! (&& >> #LL SSH O 
-  5;; &
+' < !!! !"" 4// '00 4==# 8DD! 6SS 'TT 4``! 6F
+     ! (&& >> #LL SSH O 
+! 6;; &
 <<‡ œ
 7 K$ 8
 U [ 
 
-) <
-K V  = H
+) <
+K V  = H))[ f
    !!1 ?&&2 @
 "" $$ 
 
-,,  3
-,,9 C..( 2//< F
+,,  3(
+,,9 C..( 2//< F44Y c
 00 22 
 
 996 H(
@@ -961,12 +961,12 @@ oE:\Final-Project-WebTechnologies-main - copia\Backend\PastryShopAPI\PastryShopA
 DD FF LL. 6
 
 OO) <(
-OOB LQQ( 2RR! +SS< F(
-OO\ kRR SSd s[[ "
+OOB LQQ( 2RR! +SS< F=
+OO\ kRR SSd sXXV e	XXv …[[ "
 TT VV 
 ^^ 0.. 'QQ '
-^^6 @aaH ReeI S
-aa cc •
+^^6 @``H RddI S
+`` bb •
 
 rE:\Final-Project-WebTechnologies-main - copia\Backend\PastryShopAPI\PastryShopAPI\Services\Combos\CombosService.cs
 
