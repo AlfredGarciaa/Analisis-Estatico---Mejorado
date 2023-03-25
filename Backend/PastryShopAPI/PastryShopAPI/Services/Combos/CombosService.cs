@@ -154,15 +154,5 @@ namespace PastryShopAPI.Services.Combos
             }
             return totalPrice;
         }
-
-        private async Task ValidateComboAsync(long comboId)
-        {
-            var combo = await _pastryShopRepository.GetComboAsync(comboId);
-
-            if (combo == null)
-            {
-                throw new NotFoundItemException($"The combo with id: {comboId} does not exists.");
-            }
-        }
     }
 }
