@@ -157,7 +157,7 @@ window.addEventListener('DOMContentLoaded', function(event){
         
         const url = `${baseUrl}/categories/1/products/all`;
         let response = await fetch(url);
-        if(response.status = 200){
+        if(response.status == 200){
             let data = await response.json();
             let productOptions = data.map(product => { 
                 return `
