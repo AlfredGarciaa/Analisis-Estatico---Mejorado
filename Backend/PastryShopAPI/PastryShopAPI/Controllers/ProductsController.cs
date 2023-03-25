@@ -13,8 +13,8 @@ namespace PastryShopAPI.Controllers
     [Route("api/categories/{categoryId:long}/[controller]")]
     public class ProductsController : Controller
     {
-        private IProductsService _productService;
-        private IFileService _fileService; // Files (image files) handler service
+        private readonly IProductsService _productService;
+        private readonly IFileService _fileService; // Files (image files) handler service
 
         public ProductsController(IProductsService productService, IFileService fileService)
         {
