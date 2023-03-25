@@ -56,13 +56,11 @@ namespace PastryShopAPI.Services.Combos
             }
 
 
-            return _mapper.Map<ComboModel>(combo); // _mapper.Map<CategoryFormModel>(combo);
+            return _mapper.Map<ComboModel>(combo);
         }
 
         public async Task<ComboModel> UpdateComboAsync(/*long comboId,*/ ComboModel updatedCombo)
         {
-            //await ValidateComboAsync(comboId);// Quizas ya no es necesario!
-            //updatedCombo.Id = comboId;
             await _pastryShopRepository.UpdateComboAsync(updatedCombo.Id, _mapper.Map<ComboEntity>(updatedCombo));
             var result = await _pastryShopRepository.SaveChangesAsync();
 
@@ -159,7 +157,6 @@ namespace PastryShopAPI.Services.Combos
 
         private async Task ValidateComboAsync(long comboId)
         {
-            // await GetCategoryAsync(teamId);
             var combo = await _pastryShopRepository.GetComboAsync(comboId);
 
             if (combo == null)
