@@ -98,8 +98,8 @@ window.addEventListener('DOMContentLoaded', function(event){
                 alert(errorText);
             }
         } catch(error){
-            let errorText = await error.text();
-            alert(errorText);
+            let errorText2 = await error.text();
+            alert(errorText2);
         }
     }
 
