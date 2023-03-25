@@ -26,7 +26,6 @@ window.addEventListener('DOMContentLoaded', function(event){
                     data.text()
                     .then((error)=>{
                         alert('edited');
-                        //alert(error);
                         window.location.href = "categories.html";
                     });
                 }
@@ -87,12 +86,10 @@ window.addEventListener('DOMContentLoaded', function(event){
                 let editButton = document.querySelector('.edit-submit'); /*.delete-btn[data-delete-product-id]*/ 
                 editButton.addEventListener('click', editFormCategory);//editCategory
                 
-            } else {
-                let errorText = await response.text();
             }
         } catch(error){
-            let errorText2 = await error.text;
-            alert(errorText2);
+            let errorText = await error.text;
+            alert(errorText);
         }
     }
 
