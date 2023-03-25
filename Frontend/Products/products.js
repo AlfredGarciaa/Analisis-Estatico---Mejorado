@@ -138,7 +138,7 @@ window.addEventListener('DOMContentLoaded', function(event){
                 /*let filteredCards = cardsFilter(productCards);//.querySelector('.card-properties .card-name h2').innerText == "CHOCOLATE CAKE");
                 var productsContent = filteredCards.join('');
                 document.getElementById('cards-container').innerHTML = productsContent;*/
-                var productsContent = productCards.join('');
+                let productsContent = productCards.join('');
                 document.getElementById('cards-container').innerHTML = productsContent;
                 
                 let delButtons = document.querySelectorAll('#cards-container .card .card-bottom .btn-wrapper .delete-container'); /*.delete-btn[data-delete-product-id]*/ 
@@ -161,18 +161,18 @@ window.addEventListener('DOMContentLoaded', function(event){
                 general_filter_btn.addEventListener('click', cardsGeneralFilter)*/
                 
             } else {
-                var errorText = await response.text();
+                const errorText = await response.text();
                 alert(errorText);
             }
         } catch(error){
-            var errorText = await error.text;
+            const errorText = await error.text;
             // alert(errorText);
         }
     }
 
-    var baseRawUrl = 'http://localhost:3030';
-    var queryParams = window.location.search.split('?');
-    var categoryId = queryParams[1].split('=')[1];
+    const baseRawUrl = 'http://localhost:3030';
+    const queryParams = window.location.search.split('?');
+    const categoryId = queryParams[1].split('=')[1];
     const baseUrl = `http://localhost:3030/api/categories/${categoryId}`;
     //document.getElementById('fetch-btn').addEventListener('click', fetchTeams);
     fetchProducts();
