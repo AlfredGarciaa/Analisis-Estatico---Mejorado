@@ -10,7 +10,7 @@ namespace PastryShopAPI.Services.Combos
 {
     public interface ICombosService
     {
-        Task<ComboModel> CreateComboAsync(ComboModel model);
+        Task<ComboModel> CreateComboAsync(ComboModel newCombo);
         //Task<Product_ComboModel> AddProduct_to_ComboAsync(Product_ComboModel model);
         public Task<IEnumerable<ComboModel>> GetCombosAsync();
         public Task<ComboModel> GetComboAsync(long comboId);
