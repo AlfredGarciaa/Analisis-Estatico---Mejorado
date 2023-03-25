@@ -119,7 +119,7 @@ namespace PastryShopAPI.Services.Combos
 
             _pastryShopRepository.AddProduct_to_ComboAsync(productComboEntity);
             var result = await _pastryShopRepository.SaveChangesAsync();
-            if (result == true)
+            if (result)
             {
                 return new UserManagerResponse
                 {
