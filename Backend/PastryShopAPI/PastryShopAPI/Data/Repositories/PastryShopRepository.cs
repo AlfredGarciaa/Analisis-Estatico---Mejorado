@@ -149,9 +149,9 @@ namespace PastryShopAPI.Data.Repositories
 
 
         // ================================ COMBOS =======================================
-        public void CreateCombo(ComboEntity newComboEntity)
+        public void CreateCombo(ComboEntity comboEntity)
         {
-            _dbContext.Combos.Add(newComboEntity);
+            _dbContext.Combos.Add(comboEntity);
         }
 
         public async Task<IEnumerable<ComboEntity>> GetCombosAsync()
