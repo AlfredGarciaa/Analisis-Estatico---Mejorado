@@ -10085,7 +10085,7 @@ UseStartup )
 ) 
 ; 
 } 
-} ·C
+} ¶G
 oE:\Final-Project-WebTechnologies-main - copia\Backend\PastryShopAPI\PastryShopAPI\Services\CategoriesService.cs
 	namespace		 	
 PastryShopAPI		
@@ -10101,29 +10101,29 @@ oE:\Final-Project-WebTechnologies-main - copia\Backend\PastryShopAPI\PastryShopA
 CategoriesService "
 :# $
 ICategoriesService% 7
-{ 
-private !
-IPastryShopRepository %!
-_pastryShopRepository& ;
-;; <
-private 
-IMapper 
-_mapper 
-;  
-private 
-HashSet 
-< 
-string 
-> !
-_allowedOrderByValues  5
-=6 7
-new8 ;
-HashSet< C
-<C D
-stringD J
->J K
-(K L
-)L M
+{ 
+readonly !
+IPastryShopRepository &!
+_pastryShopRepository' <
+;< =
+readonly 
+IMapper 
+_mapper  
+;  !
+readonly 
+HashSet 
+< 
+string 
+>  !
+_allowedOrderByValues! 6
+=7 8
+new9 <
+HashSet= D
+<D E
+stringE K
+>K L
+(L M
+)M N
 { 	
 $str 
 , 
@@ -10214,12 +10214,19 @@ oE:\Final-Project-WebTechnologies-main - copia\Backend\PastryShopAPI\PastryShopA
 ;&&A B
 }'' 
 throw)) 
-new)) 
-	Exception)) 
-())  
-$str))  0
-)))0 1
-;))1 2
+new)) )
+InvalidOperationItemException)) 3
+())3 4
+$"))4 6
+$str))6 Z
+{))Z [
+newCategory))[ f
+.))f g
+Name))g k
+}))k l
+"))l m
+)))m n
+;))n o
 }** 	
 public,, 
 async,, 
@@ -10267,12 +10274,18 @@ categoryId//< F
 )22 
 {33 
 throw44 
-new44 
-	Exception44 #
-(44# $
-$str44$ 4
-)444 5
-;445 6
+new44 )
+InvalidOperationItemException44 7
+(447 8
+$"448 :
+$str44: X
+{44X Y
+
+categoryId44Y c
+}44c d
+"44d e
+)44e f
+;44f g
 }55 
 return66 
 true66 
@@ -10511,12 +10524,31 @@ categoryIdSS< F
 )VV 
 {WW 
 throwXX 
-newXX 
-	ExceptionXX #
-(XX# $
-$strXX$ 4
-)XX4 5
-;XX5 6
+newXX )
+InvalidOperationItemExceptionXX 7
+(XX7 8
+$"XX8 :
+$strXX: U
+{XXU V
+updatedCategoryXXV e
+.XXe f
+NameXXf j
+}XXj k
+$strXXk u
+{XXu v
+updatedCategory	XXv …
+.
+XX… †
+Id
+XX† ˆ
+}
+XXˆ ‰
+"
+XX‰ Š
+)
+XXŠ ‹
+;
+XX‹ Œ
 }YY 
 return[[ 
 updatedCategory[[ "
@@ -10532,43 +10564,43 @@ categoryIdSS< F
 categoryId^^6 @
 )^^@ A
 {__ 	
-varaa 
-categoryaa 
-=aa 
-awaitaa  !
-_pastryShopRepositoryaa! 6
-.aa6 7
-GetCategoryAsyncaa7 G
-(aaG H
+var`` 
+category`` 
+=`` 
+await``  !
+_pastryShopRepository``! 6
+.``6 7
+GetCategoryAsync``7 G
+(``G H
 
-categoryIdaaH R
-)aaR S
-;aaS T
-ifcc 
-(cc 
-categorycc 
-==cc 
-nullcc  
-)cc  !
-{dd 
-throwee 
-newee !
-NotFoundItemExceptionee /
-(ee/ 0
-$"ee0 2
-$stree2 H
-{eeH I
+categoryId``H R
+)``R S
+;``S T
+ifbb 
+(bb 
+categorybb 
+==bb 
+nullbb  
+)bb  !
+{cc 
+throwdd 
+newdd !
+NotFoundItemExceptiondd /
+(dd/ 0
+$"dd0 2
+$strdd2 H
+{ddH I
 
-categoryIdeeI S
-}eeS T
-$streeT e
-"eee f
-)eef g
-;eeg h
-}ff 
-}gg 	
-}hh 
-}ii Ä^
+categoryIdddI S
+}ddS T
+$strddT e
+"dde f
+)ddf g
+;ddg h
+}ee 
+}ff 	
+}gg 
+}hh Ä^
 rE:\Final-Project-WebTechnologies-main - copia\Backend\PastryShopAPI\PastryShopAPI\Services\Combos\CombosService.cs
 	namespace 	
 PastryShopAPI

@@ -10,38 +10,6 @@ window.addEventListener('DOMContentLoaded', function(event){
             return true;
         }
     }
-    async function createCategory(event)
-    {
-        debugger;
-        let name = document.querySelector('#name_input').value;
-        let description = document.querySelector('#description_input').value;
-        //let imageFileButton = document.querySelector('#form-wrapper #post-form .property-wrapper .custom-file-input')
-        let imageURL = document.querySelector('#image_input').value;
-
-        if(!validProperties(name, description, image)){
-            return;
-        }
-
-        let url = `${baseUrl}/categories/`;
-        let data = await fetch(url, { 
-                headers: { "Content-Type": "application/json; charset=utf-8" },
-                method: 'POST',
-                body: JSON.stringify({
-                    Name: name,
-                    Description: description,
-                    ImageUrl: imageURL
-                })
-            });
-        try {
-            if(data.status === 201){
-                alert('Created');
-                window.location.href = "categories.html";//"http://127.0.0.1:5500/";
-            }
-        } catch(error){
-            var errorText = await error.text();
-            alert(errorText);
-        }
-    }
     
     function PostFormCategory(event)
     {
@@ -83,15 +51,11 @@ window.addEventListener('DOMContentLoaded', function(event){
                 });
             }
         });
-        // fetchTeams();
     }
 
     async function fetchCategory()
     {
-        const url = `${baseUrl}/categories/`;
-        //let response = await fetch(url);
         debugger;
-                //let product = await response.json();
         let productCard = `
             <div id="form-image" style="background: url(https://images.unsplash.com/photo-1598903910670-321f09e94b42?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80)">
             </div>
@@ -122,7 +86,6 @@ window.addEventListener('DOMContentLoaded', function(event){
                 </div>
             </div>
         `;
-        //var productContent = productCard.join('');
         document.querySelector('#form-wrapper').innerHTML = productCard;
         
         let createButton = document.querySelector('#post-form .create-submit'); /*.delete-btn[data-delete-product-id]*/ 
@@ -130,10 +93,6 @@ window.addEventListener('DOMContentLoaded', function(event){
         //createButton.addEventListener('click', createCategory);PostFormCategory
     }
 
-
-    //debugger;
     const baseUrl = 'http://localhost:3030/api';
-    // alert(productId);
     fetchCategory();
-    
 });
