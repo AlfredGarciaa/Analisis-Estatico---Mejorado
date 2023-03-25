@@ -55,7 +55,7 @@ window.addEventListener('DOMContentLoaded', function(event){
                         <div class="card-overlay" data-card-combo-id="${combo.id}"></div>
                     </div>`});
                 
-                var combosContent = comboCards.join('');
+                let combosContent = comboCards.join('');
                 document.getElementById('cards-container').innerHTML = combosContent;
 
                 let createButton = document.querySelector('#navigation-container .create-container');//('.navigation .create-container');
@@ -67,11 +67,11 @@ window.addEventListener('DOMContentLoaded', function(event){
                 }
                 
             } else {
-                var errorText = await response.text();
+                let errorText = await response.text();
                 alert(errorText);
             }
         } catch(error){
-            var errorText = await error.text;
+            let errorText = await error.text;
             alert(errorText);
         }
     }
