@@ -11,9 +11,9 @@ namespace PastryShopAPI.Services
     public class CategoriesService : ICategoriesService
     {
         readonly IPastryShopRepository _pastryShopRepository;
-        private IMapper _mapper;
+        readonly IMapper _mapper;
 
-        private HashSet<string> _allowedOrderByValues = new HashSet<string>()
+        readonly HashSet<string> _allowedOrderByValues = new HashSet<string>()
         {
             "id",
             "name",
