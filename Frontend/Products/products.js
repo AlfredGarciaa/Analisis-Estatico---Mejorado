@@ -26,40 +26,11 @@ window.addEventListener('DOMContentLoaded', function(event){
         }); 
     }
 
-    function cardsGeneralFilter() {
-        debugger;
-
-        let productCards = document.querySelectorAll('.card');
-        let filter = document.querySelector('.filter-container .general-filter-wrapper #general-filter').value;
-        if(filter === "name_a-z"){
-            return productCards.filter(card => card.includes(`<h2>C`));
-        }
-        else if(filter === "name_a-z"){
-            return productCards;
-        }
-        else if(filter === "name_z-a"){
-            return productCards;
-        }
-        else if(filter === "price_low-high"){
-            return productCards;
-        }
-        else if(filter === "price_high-low"){
-            return productCards;
-        }
-        else if(filter === "none"){
-            return productCards;
-        }
-        else{
-            return productCards;
-        }
-        
-    }
-
     function cardsSpecificFilter(){
         debugger;
         let filter = document.querySelector('.filter-container .specific-filter-wrapper #specific-filter').value;
         let selector = (filter==="name")? '.card-name' : (filter==="description")? '.card-description' : 'none';
-        let val = document.querySelector('#specific-filter-input').value;//"cake";
+        let val = document.querySelector('#specific-filter-input').value;
         val = val.toUpperCase();
         let cards = document.querySelectorAll('.card');
     
