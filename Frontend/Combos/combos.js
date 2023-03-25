@@ -67,8 +67,8 @@ window.addEventListener('DOMContentLoaded', function(event){
                 }
                 
             } else {
-                let errorText = await response.text();
-                alert(errorText);
+                let errorText2 = await response.text();
+                alert(errorText2);
             }
         } catch(error){
             let errorText = await error.text;
