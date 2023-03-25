@@ -4,7 +4,6 @@ window.addEventListener('DOMContentLoaded', function(event){
 
     function goToEditProduct(){
         let productId = this.dataset.editProductId;
-        //alert(productId);
         window.location.href = `./editProduct.html?categoryId=${categoryId}&productId=${productId}`;
     }
 
@@ -13,36 +12,26 @@ window.addEventListener('DOMContentLoaded', function(event){
     }
 
     function DeleteProduct(event){
-        //debugger;
+
         let productId = this.dataset.deleteProductId;
-        //debugger;
-        let url = `${baseUrl}/products/${productId}`;//`${baseUrl}/categories/${productId}`;
+
+        let url = `${baseUrl}/products/${productId}`;
         fetch(url, { 
         method: 'DELETE' 
         }).then((data)=>{
             if(data.status === 200){
                 alert('deleted');
-                window.location.reload(); //Reloads the page
+                window.location.reload(); 
             }
         }); 
     }
 
     function cardsGeneralFilter() {
         debugger;
-//return productCards.filter(card => card.includes(`<h2>C`));
-        //filter = "name_a-z";
+
         let productCards = document.querySelectorAll('.card');
         let filter = document.querySelector('.filter-container .general-filter-wrapper #general-filter').value;
         if(filter === "name_a-z"){
-            /*let x = productCards[0].innerHTML;
-            productCards.sort((a,b) => {
-                return a.innerHTML.toLowerCase().localeCompare(b.innerHTML.toLowerCase());
-            });//card => card.innerHTML);
-            let orderCards = cardNames.sort();*/
-
-            /*let cardNames = productCards.map(card => {
-                return card.substring(card.substring(card.indexOf(`<div class="card-name"><h2>`), +1))
-            });*/
             return productCards.filter(card => card.includes(`<h2>C`));
         }
         else if(filter === "name_a-z"){
@@ -86,21 +75,19 @@ window.addEventListener('DOMContentLoaded', function(event){
             });
         }
         
-        //window.location.reload();
 
     }
     
     async function fetchProducts()
     {
-        //debugger;
-        const url = `${baseUrl}/products`;//`${baseUrl}/categories`;
+ 
+        const url = `${baseUrl}/products`;
         let response = await fetch(url);
-        //debugger;
+
         try{
             if(response.status == 200){
                 let data = await response.json();
                 let productCards = data.map(product => { 
-                //debugger;
                 let backImageUrl = product.imagePath? 
                 `${baseRawUrl}/${product.imagePath}`.replace(/\\/g, "/") : product.imageUrl;    
                 return `
@@ -134,10 +121,7 @@ window.addEventListener('DOMContentLoaded', function(event){
                     
                     <div class="card-overlay"></div>
                 </div>`});
-                //debugger;
-                /*let filteredCards = cardsFilter(productCards);//.querySelector('.card-properties .card-name h2').innerText == "CHOCOLATE CAKE");
-                var productsContent = filteredCards.join('');
-                document.getElementById('cards-container').innerHTML = productsContent;*/
+
                 let productsContent = productCards.join('');
                 document.getElementById('cards-container').innerHTML = productsContent;
                 
@@ -157,16 +141,13 @@ window.addEventListener('DOMContentLoaded', function(event){
                 let specific_filter_btn = document.querySelector('#specific-filter-btn');
                 specific_filter_btn.addEventListener('click', cardsSpecificFilter)
 
-                /*let general_filter_btn = document.querySelector('#general-filter-btn');
-                general_filter_btn.addEventListener('click', cardsGeneralFilter)*/
-                
+
             } else {
                 const errorText = await response.text();
                 alert(errorText);
             }
         } catch(error){
             const errorText = await error.text;
-            // alert(errorText);
         }
     }
 
@@ -174,9 +155,5 @@ window.addEventListener('DOMContentLoaded', function(event){
     const queryParams = window.location.search.split('?');
     const categoryId = queryParams[1].split('=')[1];
     const baseUrl = `http://localhost:3030/api/categories/${categoryId}`;
-    //document.getElementById('fetch-btn').addEventListener('click', fetchTeams);
     fetchProducts();
-    
 });
-
-//https://www.freecodecamp.org/news/a-practical-es6-guide-on-how-to-perform-http-requests-using-the-fetch-api-594c3d91a547/
