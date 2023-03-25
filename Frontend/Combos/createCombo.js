@@ -1,9 +1,9 @@
 window.addEventListener('DOMContentLoaded', function(event){
 
-    var expanded = false;
+    let expanded = false;
 
     function showCheckboxes() {
-        var checkboxes = document.getElementById("checkboxes");
+        let checkboxes = document.getElementById("checkboxes");
         if (!expanded) {
             checkboxes.style.display = "flex";
             expanded = true;
@@ -168,7 +168,7 @@ window.addEventListener('DOMContentLoaded', function(event){
             document.querySelector('#post-form #checkboxes').innerHTML = productOptions;
 
         }else {
-            var errorText = await response.text();
+            let errorText = await response.text();
             alert(errorText);
         }
         
@@ -179,7 +179,7 @@ window.addEventListener('DOMContentLoaded', function(event){
         selectDropdown.addEventListener('click', showCheckboxes)
     }
 
-    var comboId;
+    let comboId;
     const baseUrl = 'http://localhost:3030/api';
     fetchCategory();
     
