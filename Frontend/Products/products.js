@@ -170,7 +170,7 @@ window.addEventListener('DOMContentLoaded', function(event){
         }
     }
 
-    baseRawUrl = 'http://localhost:3030';
+    var baseRawUrl = 'http://localhost:3030';
     var queryParams = window.location.search.split('?');
     var categoryId = queryParams[1].split('=')[1];
     const baseUrl = `http://localhost:3030/api/categories/${categoryId}`;
