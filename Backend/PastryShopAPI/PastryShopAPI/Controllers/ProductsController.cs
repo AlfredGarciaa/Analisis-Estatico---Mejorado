@@ -13,8 +13,8 @@ namespace PastryShopAPI.Controllers
     [Route("api/categories/{categoryId:long}/[controller]")]
     public class ProductsController : Controller
     {
-        private IProductsService _productService;
-        private IFileService _fileService; // Files (image files) handler service
+        private readonly IProductsService _productService;
+        private readonly IFileService _fileService; // Files (image files) handler service
 
         public ProductsController(IProductsService productService, IFileService fileService)
         {
@@ -60,28 +60,7 @@ namespace PastryShopAPI.Controllers
 
         }
 
-        /*[HttpPost]
-        public async Task<ActionResult<ProductModel>> CreateProductAsync(long categoryId, [FromBody] ProductModel newProduct)
-        {
-            try
-            {
-                if (!ModelState.IsValid)
-                {
-                    return BadRequest(ModelState);
-                }
-
-                var createdProduct = await _productService.CreateProductAsync(categoryId, newProduct);
-                return Created($"/api/categories/{categoryId}/products/{createdProduct.Id}", createdProduct);
-            }
-            catch (NotFoundItemException ex)
-            {
-                return NotFound(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Something unexpected happened.");
-            }
-        }*/
+       
 
         [HttpPost("Form")]
         public async Task<ActionResult<ProductModel>> CreateProductFormAsync(long categoryId, [FromForm] ProductFormModel newProduct)
