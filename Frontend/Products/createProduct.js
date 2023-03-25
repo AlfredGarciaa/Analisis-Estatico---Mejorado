@@ -41,7 +41,7 @@ window.addEventListener('DOMContentLoaded', function(event){
                 window.location.href = `../Products/products.html?categoryId=${categoryId}`;//"http://127.0.0.1:5500/";
             }
         } catch(error){
-            var errorText = await error.text();
+            let errorText = await error.text();
             alert(errorText);
         }
     }
@@ -89,9 +89,9 @@ window.addEventListener('DOMContentLoaded', function(event){
         createButton.addEventListener('click', createFormProduct); //createProduct
     }
 
-    var queryParams = window.location.search.split('?')[1];
-    var queryParam1 = queryParams;
-    var categoryId = queryParam1.split("=")[1];
+    let queryParams = window.location.search.split('?')[1];
+    let queryParam1 = queryParams;
+    let categoryId = queryParam1.split("=")[1];
     const baseUrl = `http://localhost:3030/api/categories/${categoryId}`;
     fetchProduct();
     
