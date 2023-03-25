@@ -60,28 +60,7 @@ namespace PastryShopAPI.Controllers
 
         }
 
-        /*[HttpPost]
-        public async Task<ActionResult<ProductModel>> CreateProductAsync(long categoryId, [FromBody] ProductModel newProduct)
-        {
-            try
-            {
-                if (!ModelState.IsValid)
-                {
-                    return BadRequest(ModelState);
-                }
-
-                var createdProduct = await _productService.CreateProductAsync(categoryId, newProduct);
-                return Created($"/api/categories/{categoryId}/products/{createdProduct.Id}", createdProduct);
-            }
-            catch (NotFoundItemException ex)
-            {
-                return NotFound(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Something unexpected happened.");
-            }
-        }*/
+       
 
         [HttpPost("Form")]
         public async Task<ActionResult<ProductModel>> CreateProductFormAsync(long categoryId, [FromForm] ProductFormModel newProduct)
