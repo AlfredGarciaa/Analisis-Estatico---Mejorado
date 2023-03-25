@@ -120,5 +120,5 @@ window.addEventListener('DOMContentLoaded', function(event){
     const baseUrl = 'http://localhost:3030/api';
     let queryParams = window.location.search.split('?');
     let categoryId= queryParams[1].split('=')[1];
-    fetchCategory(categoryId);
+    fetchCategory();
 });
