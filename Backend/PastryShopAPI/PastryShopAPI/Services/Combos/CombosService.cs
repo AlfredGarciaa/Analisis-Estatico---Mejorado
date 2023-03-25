@@ -13,8 +13,8 @@ namespace PastryShopAPI.Services.Combos
 {
     public class CombosService : ICombosService
     {
-        private IPastryShopRepository _pastryShopRepository;
-        private IMapper _mapper;
+        private readonly IPastryShopRepository _pastryShopRepository;
+        private readonly IMapper _mapper;
 
         public CombosService(IPastryShopRepository pastryShopRepository, IMapper mapper)
         {
