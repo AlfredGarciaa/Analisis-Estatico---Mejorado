@@ -16,8 +16,8 @@ namespace PastryShopAPI.Controllers
     [Route("api/[controller]")]
     public class CombosController : Controller
     {
-        private ICombosService _combosService;
-        private IFileService _fileService;
+        private readonly ICombosService _combosService;
+        private readonly IFileService _fileService;
 
         public CombosController(ICombosService combosService, IFileService fileService)
         {
