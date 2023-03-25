@@ -2,7 +2,6 @@
 window.addEventListener('DOMContentLoaded', function(event){
 
     function goToProducts(){
-        //debugger;
         let categoryId = this.dataset.cardCategoryId;
         window.location.href = `../Products/products.html?categoryId=${categoryId}`;
     }
@@ -22,7 +21,6 @@ window.addEventListener('DOMContentLoaded', function(event){
             if(response.status == 200){
                 let data = await response.json();
                 let comboCards = data.map(combo => { 
-                    //debugger;
                     let backImageUrl = combo.imagePath? 
                     `${baseRawUrl}/${combo.imagePath}`.replace(/\\/g, "/") : combo.imageUrl;
                     return `
@@ -68,9 +66,6 @@ window.addEventListener('DOMContentLoaded', function(event){
                     card.addEventListener('click', goToProducts);
                 }
                 
-                /*let specific_filter_btn = document.querySelector('#specific-filter-btn');
-                specific_filter_btn.addEventListener('click', cardsSpecificFilter)*/
-                
             } else {
                 var errorText = await response.text();
                 alert(errorText);
@@ -80,11 +75,6 @@ window.addEventListener('DOMContentLoaded', function(event){
             alert(errorText);
         }
     }
-
-    // VALIDATING JWT TOKEN FOR ACCESS 
-    /*if(!Boolean(sessionStorage.getItem("jwt"))){
-        window.location.href = "combos.html";
-    }*/
 
     const baseRawUrl = 'http://localhost:3030';
     const baseUrl = 'http://localhost:3030/api';
