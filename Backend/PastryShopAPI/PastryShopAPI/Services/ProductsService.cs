@@ -29,15 +29,25 @@ namespace PastryShopAPI.Services
 
             var result = await _pastryShopRepository.SaveChangesAsync();
 
+            if (!result)
+            {
+                throw new InvalidOperationItemException($"Could not create new product name: {newProduct.Name}");
+            }
+
             return _mapper.Map<ProductModel>(productEntity);
         }
 
         public async Task<bool> DeleteProductAsync(long categoriyId, long productId)
         {
-            ValidateCategoryAndProduct(categoriyId, productId);
+            await ValidateCategoryAndProductAsync(categoriyId, productId);
             await _pastryShopRepository.DeleteProductAsync(categoriyId, productId);
 
             var result = await _pastryShopRepository.SaveChangesAsync();
+
+            if (!result)
+            {
+                throw new InvalidOperationItemException($"Could not delete product ID: {productId}");
+            }
 
             return true;
         }
@@ -66,9 +76,14 @@ namespace PastryShopAPI.Services
 
         public async Task<ProductModel> UpdateProductAsync(long categoriyId, long productId, ProductModel updatedProduct)
         {
-            ValidateCategoryAndProduct(categoriyId, productId);
+            await ValidateCategoryAndProductAsync(categoriyId, productId);
             await _pastryShopRepository.UpdateProductAsync(categoriyId, productId, _mapper.Map<ProductEntity>(updatedProduct));
             var result = await _pastryShopRepository.SaveChangesAsync();
+
+            if (!result)
+            {
+                throw new InvalidOperationItemException($"Could not update product: {updatedProduct.Name} with id: {updatedProduct.Id}");
+            }
 
             return updatedProduct;
         }
@@ -82,9 +97,10 @@ namespace PastryShopAPI.Services
             }
         }
 
-        private void ValidateCategoryAndProduct(long categoriyId, long productId)
+        private async Task<ProductModel> ValidateCategoryAndProductAsync(long categoriyId, long productId)
         {
-            
+            var product = await GetProductAsync(categoriyId, productId);
+            return product;
         }
 
         // FOR COMBOS Creation

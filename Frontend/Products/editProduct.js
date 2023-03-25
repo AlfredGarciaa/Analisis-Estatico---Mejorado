@@ -108,7 +108,7 @@ window.addEventListener('DOMContentLoaded', function(event){
                 alert(errorText);
             }
         } catch(error){
-            var errorText = await error.text();
+            let errorText = await error.text();
             alert(errorText);
         }
     }
