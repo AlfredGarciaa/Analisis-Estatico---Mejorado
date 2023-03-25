@@ -10,7 +10,7 @@ namespace PastryShopAPI.Data.Repositories
 {
     public class PastryShopRepository : IPastryShopRepository
     {
-        private PastryShopDbContext _dbContext;
+        private readonly PastryShopDbContext _dbContext;
         public PastryShopRepository(PastryShopDbContext dbContext)
         {
             _dbContext = dbContext;
