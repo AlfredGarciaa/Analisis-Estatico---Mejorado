@@ -1,25 +1,5 @@
 window.addEventListener('DOMContentLoaded', function(event){
 
-    function validProperties(name, description, image, imageFile){
-        debugger;
-        let name_placeholder = document.querySelector('#name_input').placeholder
-        let description_placeholder = document.querySelector('#description_input').placeholder
-        let image_placeholder = document.querySelector('#image_input').placeholder
-        if (name === "" || description === "" || (image === "" && !imageFile)){
-            alert("Not valid values. Please fill all the fields");
-            return false;
-        }
-        else if(name === name_placeholder && description === description_placeholder && image === image_placeholder){
-            alert("Nothing changed");
-            window.location.href = "categories.html";//"http://127.0.0.1:5500/";
-        }
-        
-        else{
-            return true;
-        }
-    }
-    
-
     function editFormCategory()
     {
         debugger;
