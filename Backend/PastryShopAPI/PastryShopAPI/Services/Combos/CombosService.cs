@@ -35,7 +35,7 @@ namespace PastryShopAPI.Services.Combos
                 return _mapper.Map<ComboModel>(comboEntity);
             }
 
-            throw new Exception("Database Error");
+            throw new InvalidOperationItemException($"Could not create new combo named: {newCombo.Name}");
         }
 
 
@@ -66,7 +66,7 @@ namespace PastryShopAPI.Services.Combos
 
             if (!result)
             {
-                throw new Exception("Database Error");
+                throw new InvalidOperationItemException($"Could not update combo {updatedCombo.Name} with id: {updatedCombo.Id}");
             }
 
             return updatedCombo;
