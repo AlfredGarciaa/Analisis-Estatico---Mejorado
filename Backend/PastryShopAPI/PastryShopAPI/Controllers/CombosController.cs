@@ -104,7 +104,7 @@ namespace PastryShopAPI.Controllers
                 // CALCULATE TOTAL PRICE:
                 // Add the new products price to the combo it is being linked to
                
-                //newCombo.Price = totalPrice;
+                
                 var result = await _combosService.CreateProductComboAsync(product_comboModel);
 
                 if (true)//result.IsSuccess
@@ -117,17 +117,11 @@ namespace PastryShopAPI.Controllers
                     return Ok(result);
                 }
 
-                //return BadRequest(result);
+               
             }
             return BadRequest("Some properties are not valid");
         }
 
-        /*[HttpPost("ProductsCombosAttach")]
-        public async Task<ActionResult<Product_ComboModel>> AttachProductComboAsync([FromBody] Product_ComboModel product_comboModel)
-        {
-            var response = await CreateProductComboAsync(product_comboModel);
-            return product_comboModel;
-        }*/
 
             // Get combo products
 
