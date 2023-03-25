@@ -38,7 +38,7 @@ namespace PastryShopAPI.Services
                 return _mapper.Map<CategoryModel>(categoryEntity);
             }
 
-            throw new Exception("Database Error");
+            throw new InvalidOperationItemException($"Could not create new category name: {newCategory.Name}");
         }
 
         public async Task<bool> DeleteCategoryAsync(long categoryId)
@@ -49,7 +49,7 @@ namespace PastryShopAPI.Services
 
             if (!result)
             {
-                throw new Exception("Database Error");
+                throw new InvalidOperationItemException($"Could not delete category ID: {categoryId}");
             }
             return true;
         }
@@ -85,7 +85,7 @@ namespace PastryShopAPI.Services
 
             if (!result)
             {
-                throw new Exception("Database Error");
+                throw new InvalidOperationItemException($"Could not update category: {updatedCategory.Name} with id: {updatedCategory.Id}");
             }
 
             return updatedCategory;
