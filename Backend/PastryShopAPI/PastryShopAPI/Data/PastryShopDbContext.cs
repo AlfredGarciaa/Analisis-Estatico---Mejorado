@@ -21,40 +21,35 @@ namespace PastryShopAPI.Data
         {
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder builder)
         {
-            base.OnModelCreating(modelBuilder);
+            base.OnModelCreating(builder);
 
             // ====== Categories (1-->M) ======
-            modelBuilder.Entity<CategoryEntity>().ToTable("Categories");
-            modelBuilder.Entity<CategoryEntity>().Property(c => c.Id).ValueGeneratedOnAdd();
-            modelBuilder.Entity<CategoryEntity>().HasMany(c => c.Products).WithOne(p => p.Category);
+            builder.Entity<CategoryEntity>().ToTable("Categories");
+            builder.Entity<CategoryEntity>().Property(c => c.Id).ValueGeneratedOnAdd();
+            builder.Entity<CategoryEntity>().HasMany(c => c.Products).WithOne(p => p.Category);
 
             // ====== Products (1-->M) ======
-            modelBuilder.Entity<ProductEntity>().ToTable("Products");
-            modelBuilder.Entity<ProductEntity>().Property(p => p.Id).ValueGeneratedOnAdd();
-            modelBuilder.Entity<ProductEntity>().HasOne(p => p.Category).WithMany(c => c.Products);
-            // Many to Many relationship is defined in the Product_Combo Entity modelBuilder.
+            builder.Entity<ProductEntity>().ToTable("Products");
+            builder.Entity<ProductEntity>().Property(p => p.Id).ValueGeneratedOnAdd();
+            builder.Entity<ProductEntity>().HasOne(p => p.Category).WithMany(c => c.Products);
+            // Many to Many relationship is defined in the Product_Combo Entity builder.
 
 
             // ====== Combos ======
-            modelBuilder.Entity<ComboEntity>().ToTable("Combos");
-            modelBuilder.Entity<ComboEntity>().Property(c => c.Id).ValueGeneratedOnAdd();
-            // Many to Many relationship is defined in the Product_Combo Entity modelBuilder.
-
-
-            // ====== Key definitions Product_Combo ======
-            /*modelBuilder.Entity<Product_ComboEntity>()
-            .HasKey(bc => new { bc.ProductId, bc.ComboId });*/
+            builder.Entity<ComboEntity>().ToTable("Combos");
+            builder.Entity<ComboEntity>().Property(c => c.Id).ValueGeneratedOnAdd();
+            // Many to Many relationship is defined in the Product_Combo Entity builder.
 
 
             // ====== Combos - Products (M-->M) ======
-            modelBuilder.Entity<Product_ComboEntity>()
+            builder.Entity<Product_ComboEntity>()
             .HasOne(p => p.Product)
             .WithMany(pc => pc.Product_Combos)
             .HasForeignKey(ci => ci.ProductId);
 
-            modelBuilder.Entity<Product_ComboEntity>()
+            builder.Entity<Product_ComboEntity>()
             .HasOne(c => c.Combo)
             .WithMany(pc => pc.Product_Combos)
             .HasForeignKey(pi => pi.ComboId);
