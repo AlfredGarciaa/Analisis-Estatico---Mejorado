@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System;
+using PastryShopAPI.Exceptions;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
@@ -85,7 +86,7 @@ namespace PastryShopAPI.Services.Security
         {
             if (model == null)
             {
-                throw new NullReferenceException("model is null");
+                throw new InvalidOperationItemException("model is null");
             }
 
             if (model.Password != model.ConfirmPassword)
