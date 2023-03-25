@@ -15,8 +15,8 @@ namespace PastryShopAPI.Controllers
     [Route("api/[controller]")]
     public class CategoriesController : Controller
     {
-        private ICategoriesService _categoriesService;
-        private IFileService _fileService; // Files (image files) handler service
+        private readonly ICategoriesService _categoriesService;
+        private readonly IFileService _fileService; // Files (image files) handler service
 
         public CategoriesController(ICategoriesService categoriesService, IFileService fileService)
         {
