@@ -113,12 +113,10 @@ window.addEventListener('DOMContentLoaded', function(event){
                 specific_filter_btn.addEventListener('click', cardsSpecificFilter)
 
 
-            } else {
-                const errorText = await response.text();
-                alert(errorText);
             }
         } catch(error){
             const errorText = await error.text;
+            alert(errorText);
         }
     }
 
