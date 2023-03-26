@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', function(event){
         event.preventDefault();
         const url = `${baseUrl}/auth/Login`;
 
-        var data = {
+        let data = {
             Email: document.querySelector('#username_input').value,
             Password: document.querySelector('#password_input').value
         }
