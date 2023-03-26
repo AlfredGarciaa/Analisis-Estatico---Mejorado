@@ -1,9 +1,9 @@
 window.addEventListener('DOMContentLoaded', function(event){
 
-    var expanded = false;
+    let expanded = false;
 
     function showCheckboxes() {
-        var checkboxes = document.getElementById("checkboxes");
+        let checkboxes = document.getElementById("checkboxes");
         if (!expanded) {
             checkboxes.style.display = "flex";
             expanded = true;
@@ -14,7 +14,6 @@ window.addEventListener('DOMContentLoaded', function(event){
     }
 
     function validProperties(name, description, image, imageFile){
-        //debugger;
         if (name === "" || description === "" || (image === "" && !imageFile)){
             alert("Not valid values. Please fill all the fields");
             return false;
@@ -25,7 +24,6 @@ window.addEventListener('DOMContentLoaded', function(event){
     }
 
     async function attachProductToCombo(url, comboId, productId){
-        //debugger;
         fetch(url, { 
             headers: { "Content-Type": "application/json; charset=utf-8" },
             method: 'POST',
@@ -47,13 +45,10 @@ window.addEventListener('DOMContentLoaded', function(event){
     }
 
     function addProductToCombo(comboId){
-        //debugger;
-        //let selectedProducts = [];
         let productCbox = document.querySelectorAll('#post-form #checkboxes label');
         productCbox.forEach(prodCb => {
             let product = prodCb.querySelector("input");
             if (product.checked){
-                //selectedProducts.push(product);
                 let url = `${baseUrl}/combos/ProductsCombos`;
                 let productId = product.id.split('-')[0];
                 attachProductToCombo(url, +comboId, +productId);
@@ -61,19 +56,10 @@ window.addEventListener('DOMContentLoaded', function(event){
                 window.location.href = "combos.html";
             }
         });
-
-        /*selectedProducts.forEach(sp => {
-            debugger;
-            let url = `${baseUrl}/combos/ProductsCombos`;
-            let productId = sp.id.split('-')[0];
-            attachProductToCombo(url, +comboId, +productId);
-        });*/
-        
     }
     
     async function PostFormCombo(event)
     {
-        //debugger;
         event.preventDefault();
         let url = `${baseUrl}/combos/Form`;
         
@@ -98,7 +84,6 @@ window.addEventListener('DOMContentLoaded', function(event){
         }).then(response => {
             if(response.status === 201){
                 response.json().then(data => {
-                    //debugger;
                     comboId = data.id;
                     addProductToCombo(comboId);
                 });
@@ -172,7 +157,7 @@ window.addEventListener('DOMContentLoaded', function(event){
         
         const url = `${baseUrl}/categories/1/products/all`;
         let response = await fetch(url);
-        if(response.status = 200){
+        if(response.status == 200){
             let data = await response.json();
             let productOptions = data.map(product => { 
                 return `
@@ -183,7 +168,7 @@ window.addEventListener('DOMContentLoaded', function(event){
             document.querySelector('#post-form #checkboxes').innerHTML = productOptions;
 
         }else {
-            var errorText = await response.text();
+            let errorText = await response.text();
             alert(errorText);
         }
         
@@ -194,10 +179,8 @@ window.addEventListener('DOMContentLoaded', function(event){
         selectDropdown.addEventListener('click', showCheckboxes)
     }
 
-    var comboId;
-    //debugger;
+    let comboId;
     const baseUrl = 'http://localhost:3030/api';
-    // alert(productId);
     fetchCategory();
     
 });

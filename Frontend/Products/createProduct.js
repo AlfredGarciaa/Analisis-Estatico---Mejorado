@@ -10,38 +10,6 @@ window.addEventListener('DOMContentLoaded', function(event){
             return true;
         }
     }
-    async function createProduct(event)
-    {
-        debugger;
-        let name = document.querySelector('#name_input').value;
-        let description = document.querySelector('#description_input').value;
-        let price = +document.querySelector('#price_input').value;
-        let image = document.querySelector('#image_input').value;
-
-        if(!validProperties(name, description, price, image)){
-            return;
-        }
-        let url = `${baseUrl}/products/`;//`${baseUrl}/categories/`;
-        let data = await fetch(url, { 
-                headers: { "Content-Type": "application/json; charset=utf-8" },
-                method: 'POST',
-                body: JSON.stringify({
-                    Name: name,
-                    Description: description,
-                    Price: price,
-                    ImageUrl: image
-                })
-            });
-        try {
-            if(data.status === 201){
-                alert('Created');
-                window.location.href = `../Products/products.html?categoryId=${categoryId}`;//"http://127.0.0.1:5500/";
-            }
-        } catch(error){
-            var errorText = await error.text();
-            alert(errorText);
-        }
-    }
 
     async function createFormProduct(event)
     {
@@ -62,7 +30,7 @@ window.addEventListener('DOMContentLoaded', function(event){
         formData.append('ImageURL',imageURL);
         formData.append('Image', imageFile);
 
-        let url = `${baseUrl}/products/Form`;//`${baseUrl}/categories/`;
+        let url = `${baseUrl}/products/Form`;
         let data = await fetch(url, { 
                 method: 'POST',
                 body: formData
@@ -73,17 +41,13 @@ window.addEventListener('DOMContentLoaded', function(event){
                 window.location.href = `../Products/products.html?categoryId=${categoryId}`;//"http://127.0.0.1:5500/";
             }
         } catch(error){
-            var errorText = await error.text();
+            let errorText = await error.text();
             alert(errorText);
         }
     }
     
     async function fetchProduct()
     {
-        const url = `${baseUrl}/products/`;//`${baseUrl}/categories/`;
-        //let response = await fetch(url);
-        //debugger;
-                //let product = await response.json();
         let productCard = `
             <div id="form-image" style="background: url(https://images.unsplash.com/photo-1598903910670-321f09e94b42?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80)">
             </div>
@@ -119,18 +83,16 @@ window.addEventListener('DOMContentLoaded', function(event){
                 </div>
             </div>
         `;
-        //var productContent = productCard.join('');
         document.querySelector('#form-wrapper').innerHTML = productCard;
         
-        let createButton = document.querySelector('#post-form .create-submit'); /*.delete-btn[data-delete-product-id]*/ 
+        let createButton = document.querySelector('#post-form .create-submit');
         createButton.addEventListener('click', createFormProduct); //createProduct
     }
-    //debugger;
-    var queryParams = window.location.search.split('?')[1];
-    var queryParam1 = queryParams;
-    var categoryId = queryParam1.split("=")[1];
+
+    let queryParams = window.location.search.split('?')[1];
+    let queryParam1 = queryParams;
+    let categoryId = queryParam1.split("=")[1];
     const baseUrl = `http://localhost:3030/api/categories/${categoryId}`;
-    // alert(productId);
     fetchProduct();
     
 });

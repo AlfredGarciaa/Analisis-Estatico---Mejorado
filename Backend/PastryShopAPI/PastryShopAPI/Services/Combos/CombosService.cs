@@ -13,8 +13,8 @@ namespace PastryShopAPI.Services.Combos
 {
     public class CombosService : ICombosService
     {
-        private IPastryShopRepository _pastryShopRepository;
-        private IMapper _mapper;
+        private readonly IPastryShopRepository _pastryShopRepository;
+        private readonly IMapper _mapper;
 
         public CombosService(IPastryShopRepository pastryShopRepository, IMapper mapper)
         {
@@ -35,7 +35,7 @@ namespace PastryShopAPI.Services.Combos
                 return _mapper.Map<ComboModel>(comboEntity);
             }
 
-            throw new Exception("Database Error");
+            throw new InvalidOperationItemException($"Could not create new combo named: {newCombo.Name}");
         }
 
 
@@ -56,19 +56,17 @@ namespace PastryShopAPI.Services.Combos
             }
 
 
-            return _mapper.Map<ComboModel>(combo); // _mapper.Map<CategoryFormModel>(combo);
+            return _mapper.Map<ComboModel>(combo);
         }
 
         public async Task<ComboModel> UpdateComboAsync(/*long comboId,*/ ComboModel updatedCombo)
         {
-            //await ValidateComboAsync(comboId);// Quizas ya no es necesario!
-            //updatedCombo.Id = comboId;
             await _pastryShopRepository.UpdateComboAsync(updatedCombo.Id, _mapper.Map<ComboEntity>(updatedCombo));
             var result = await _pastryShopRepository.SaveChangesAsync();
 
             if (!result)
             {
-                throw new Exception("Database Error");
+                throw new InvalidOperationItemException($"Could not update combo {updatedCombo.Name} with id: {updatedCombo.Id}");
             }
 
             return updatedCombo;
@@ -121,7 +119,7 @@ namespace PastryShopAPI.Services.Combos
 
             _pastryShopRepository.AddProduct_to_ComboAsync(productComboEntity);
             var result = await _pastryShopRepository.SaveChangesAsync();
-            if (result == true)
+            if (result)
             {
                 return new UserManagerResponse
                 {
@@ -155,17 +153,6 @@ namespace PastryShopAPI.Services.Combos
                 
             }
             return totalPrice;
-        }
-
-        private async Task ValidateComboAsync(long comboId)
-        {
-            // await GetCategoryAsync(teamId);
-            var combo = await _pastryShopRepository.GetComboAsync(comboId);
-
-            if (combo == null)
-            {
-                throw new NotFoundItemException($"The combo with id: {comboId} does not exists.");
-            }
         }
     }
 }
