@@ -1,11 +1,9 @@
 window.addEventListener('DOMContentLoaded', function(event){
     function goToCombos(){
-        //debugger;
         window.location.href = "../Combos/combos.html";
     }
 
     function goToCategories(){
-        //debugger;
         window.location.href = "../Categories/categories.html";
     }
     //debugger

@@ -1,0 +1,6 @@
+projectKey=Back-End___H10
+serverUrl=http://localhost:9000
+serverVersion=9.9.0.65466
+dashboardUrl=http://localhost:9000/dashboard?id=Back-End___H10
+ceTaskId=AYcb-ZV43a0CRmgXbB90
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYcb-ZV43a0CRmgXbB90

@@ -10,10 +10,10 @@ namespace PastryShopAPI.Services
 {
     public class CategoriesService : ICategoriesService
     {
-        private IPastryShopRepository _pastryShopRepository;
-        private IMapper _mapper;
+        readonly IPastryShopRepository _pastryShopRepository;
+        readonly IMapper _mapper;
 
-        private HashSet<string> _allowedOrderByValues = new HashSet<string>()
+        readonly HashSet<string> _allowedOrderByValues = new HashSet<string>()
         {
             "id",
             "name",
@@ -38,7 +38,7 @@ namespace PastryShopAPI.Services
                 return _mapper.Map<CategoryModel>(categoryEntity);
             }
 
-            throw new Exception("Database Error");
+            throw new InvalidOperationItemException($"Could not create new category name: {newCategory.Name}");
         }
 
         public async Task<bool> DeleteCategoryAsync(long categoryId)
@@ -49,7 +49,7 @@ namespace PastryShopAPI.Services
 
             if (!result)
             {
-                throw new Exception("Database Error");
+                throw new InvalidOperationItemException($"Could not delete category ID: {categoryId}");
             }
             return true;
         }
@@ -73,27 +73,26 @@ namespace PastryShopAPI.Services
             }
 
 
-            return _mapper.Map<CategoryModel>(category); // _mapper.Map<CategoryFormModel>(category);
+            return _mapper.Map<CategoryModel>(category);
         }
 
         public async Task<CategoryModel> UpdateCategoryAsync(long categoryId, CategoryModel updatedCategory)
         {
-            await ValidateCategoryAsync(categoryId);// GetTeamAsync(teamId);
+            await ValidateCategoryAsync(categoryId);
             updatedCategory.Id = categoryId;
             await _pastryShopRepository.UpdateCategoryAsync(categoryId, _mapper.Map<CategoryEntity>(updatedCategory));
             var result = await _pastryShopRepository.SaveChangesAsync();
 
             if (!result)
             {
-                throw new Exception("Database Error");
+                throw new InvalidOperationItemException($"Could not update category: {updatedCategory.Name} with id: {updatedCategory.Id}");
             }
 
-            return updatedCategory;//_mapper.Map<CategoryModel>(updatedCategory);
+            return updatedCategory;
         }
 
         private async Task ValidateCategoryAsync(long categoryId)
         {
-            // await GetCategoryAsync(teamId);
             var category = await _pastryShopRepository.GetCategoryAsync(categoryId);
 
             if (category == null)

@@ -6,15 +6,7 @@ window.addEventListener('DOMContentLoaded', function(event){
         event.preventDefault();
         const url = `${baseUrl}/auth/Login`;
 
-        /* if(!Boolean(event.currentTarget.userName.value)){
-            var usernameErrorElement = document.getElementById("login-errors");
-            usernameErrorElement.textContent= "username is requered"
-            usernameErrorElement.style.display = "block"
-            return;
-        }    */
-
-
-        var data = {
+        let data = {
             Email: document.querySelector('#username_input').value,
             Password: document.querySelector('#password_input').value
         }
@@ -45,7 +37,6 @@ window.addEventListener('DOMContentLoaded', function(event){
         });
 
     }
-
     
     async function fetchProduct()
     {
@@ -76,9 +67,6 @@ window.addEventListener('DOMContentLoaded', function(event){
         let loginButton = document.querySelector('#post-form .create-submit');
         loginButton.addEventListener('click', login);
     }
-    //debugger;
     const baseUrl = 'http://localhost:3030/api';
-    // alert(productId);
     fetchProduct();
-    
 });

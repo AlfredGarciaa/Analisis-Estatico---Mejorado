@@ -31,7 +31,7 @@ window.addEventListener('DOMContentLoaded', function(event){
         if(!validProperties(name, description, price, image)){
             return;
         }
-        let url = `${baseUrl}/products/${productId}`;//`${baseUrl}/categories/${productId}`;
+        let url = `${baseUrl}/products/${productId}`;
         fetch(url, { 
             headers: { "Content-Type": "application/json; charset=utf-8" },
             method: 'PUT',
@@ -43,42 +43,18 @@ window.addEventListener('DOMContentLoaded', function(event){
             })
             }).then((data)=>{
                 if(data.status === 200){
-                    //debugger;
-                    //window.location.href = "http://127.0.0.1:5500/";
                     alert('edited');
-                    window.location.href = "categories.html";//"http://127.0.0.1:5500/";
-                    //window.location.reload(); //Reloads the page
+                    window.location.href = "categories.html";
                 }
             }).catch((errormessage) => {
                 alert(errormessage);
             });
-        
-        //window.location.href = "http://127.0.0.1:5500/";
     }
-/*fetch(url, { 
-            headers: { "Content-Type": "application/json; charset=utf-8" },
-            method: 'PUT',
-            body: JSON.stringify({
-                Name: name,
-                Description: description,
-                Price: price,
-                ImageUrl: image
-            })
-            }).then((data)=>{
-                if(data.status === 200){
-                    //debugger;
-                    window.location.href = "http://127.0.0.1:5500/";
-                    alert('edited');
-                    //window.location.reload(); //Reloads the page
-                }
-            }).catch((errormessage) => {
-                alert(errormessage)
-            });*/
+
     async function fetchProduct()
     {
-        const url = `${baseUrl}/products/${productId}`;//`${baseUrl}/categories/${productId}`;
+        const url = `${baseUrl}/products/${productId}`;
         let response = await fetch(url);
-        //debugger;
         try{
             if(response.status == 200){
                 let product = await response.json();
@@ -112,26 +88,23 @@ window.addEventListener('DOMContentLoaded', function(event){
                         </div>
                     </div>
                 `;
-                //var productContent = productCard.join('');
                 document.querySelector('#form-wrapper').innerHTML = productCard;
                 
                 let editButton = document.querySelector('.edit-submit'); /*.delete-btn[data-delete-product-id]*/ 
                 editButton.addEventListener('click', editProduct);
                 
             } else {
-                var errorText = await response.text();
+                let errorText = await response.text();
                 alert(errorText);
             }
         } catch(error){
-            var errorText = await error.text();
-            alert(errorText);
+            let errorText2 = await error.text();
+            alert(errorText2);
         }
     }
 
     const baseUrl = 'http://localhost:3030/api';
-    var queryParams = window.location.search.split('?');
-    var productId= queryParams[1].split('=')[1];
-    // alert(productId);
-    fetchProduct(productId);
-    
+    let queryParams = window.location.search.split('?');
+    let productId= queryParams[1].split('=')[1];
+    fetchProduct();
 });
