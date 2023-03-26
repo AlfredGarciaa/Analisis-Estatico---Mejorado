@@ -51,7 +51,6 @@ window.addEventListener('DOMContentLoaded', function(event){
     
     async function fetchProducts()
     {
- 
         const url = `${baseUrl}/products`;
         let response = await fetch(url);
 
@@ -116,7 +115,7 @@ window.addEventListener('DOMContentLoaded', function(event){
             }
         } catch(error){
             const errorText = await error.text;
-            alert(errorText);
+            console.log(errorText);
         }
     }
 
