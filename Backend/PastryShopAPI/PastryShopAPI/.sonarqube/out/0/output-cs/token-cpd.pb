@@ -1,4 +1,4 @@
-‹,
+Œ,
 oE:\Final-Project-WebTechnologies-main - copia\Backend\PastryShopAPI\PastryShopAPI\Controllers\AuthController.cs
 	namespace		 	
 PastryShopAPI		
@@ -25,11 +25,11 @@ oE:\Final-Project-WebTechnologies-main - copia\Backend\PastryShopAPI\PastryShopA
 AuthController 
 :  !
 ControllerBase" 0
-{ 
-private 
-IUserService 
-userService (
-;( )
+{ 
+readonly 
+IUserService 
+userService )
+;) *
 public 
 AuthController 
 ( 

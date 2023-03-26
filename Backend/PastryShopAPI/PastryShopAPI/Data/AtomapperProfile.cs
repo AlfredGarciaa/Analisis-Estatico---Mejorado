@@ -33,7 +33,6 @@ namespace PastryShopAPI.Data
                .ReverseMap();
 
             /*this.CreateMap<TeamWithPlayerModel, TeamEntity>()
-                .ReverseMap();*/
 
             /* BAD MAPPING: this.CreateMap<ProductModel, ProductEntity>()
                 .ForMember(ent => ent.Category, mod => mod.MapFrom(modSrc => new CategoryEntity() { Id = modSrc.Id }))
