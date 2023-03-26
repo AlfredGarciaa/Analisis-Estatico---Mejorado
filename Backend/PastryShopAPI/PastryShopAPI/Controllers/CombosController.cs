@@ -16,8 +16,8 @@ namespace PastryShopAPI.Controllers
     [Route("api/[controller]")]
     public class CombosController : Controller
     {
-        private ICombosService _combosService;
-        private IFileService _fileService;
+        private readonly ICombosService _combosService;
+        private readonly IFileService _fileService;
 
         public CombosController(ICombosService combosService, IFileService fileService)
         {
@@ -104,7 +104,7 @@ namespace PastryShopAPI.Controllers
                 // CALCULATE TOTAL PRICE:
                 // Add the new products price to the combo it is being linked to
                
-                //newCombo.Price = totalPrice;
+                
                 var result = await _combosService.CreateProductComboAsync(product_comboModel);
 
                 if (true)//result.IsSuccess
@@ -112,22 +112,16 @@ namespace PastryShopAPI.Controllers
                     var totalPrice = await _combosService.CalculateComboPrice(product_comboModel.ComboId);// calculate combo price
                     var combo = await _combosService.GetComboAsync(product_comboModel.ComboId);
                     combo.Price = totalPrice;
-                    await _combosService.UpdateComboAsync(combo);// Edit combo with  new price (hacerlo todo de una en el service o nox)
+                    await _combosService.UpdateComboAsync(combo);// Edit combo with  new price
 
                     return Ok(result);
                 }
 
-                //return BadRequest(result);
+               
             }
             return BadRequest("Some properties are not valid");
         }
 
-        /*[HttpPost("ProductsCombosAttach")]
-        public async Task<ActionResult<Product_ComboModel>> AttachProductComboAsync([FromBody] Product_ComboModel product_comboModel)
-        {
-            var response = await CreateProductComboAsync(product_comboModel);
-            return product_comboModel;
-        }*/
 
             // Get combo products
 

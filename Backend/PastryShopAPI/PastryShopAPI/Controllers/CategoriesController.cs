@@ -15,8 +15,8 @@ namespace PastryShopAPI.Controllers
     [Route("api/[controller]")]
     public class CategoriesController : Controller
     {
-        private ICategoriesService _categoriesService;
-        private IFileService _fileService; // Files (image files) handler service
+        private readonly ICategoriesService _categoriesService;
+        private readonly IFileService _fileService; // Files (image files) handler service
 
         public CategoriesController(ICategoriesService categoriesService, IFileService fileService)
         {
@@ -63,24 +63,7 @@ namespace PastryShopAPI.Controllers
             }
         }
 
-        // REGULAR CREATE WITH imageUrl and JSON
-        // api/teams
-        /*[HttpPost]
-        public async Task<ActionResult<CategoryModel>> CreateCategoryAsync([FromBody] CategoryModel newCategory)
-        {
-            try
-            {
-                if (!ModelState.IsValid)
-                    return BadRequest(ModelState);
-
-                var category = await _categoriesService.CreateCategoryAsync(newCategory);
-                return Created($"/api/categories/{category.Id}", category);
-            }
-            catch (Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Something unexpected happened.");
-            }
-        }*/
+        
 
         // CREATE CATEGORY WITH IMAGE FILE   api/categories/Form  using  FORM (no JSON)
         [HttpPost("Form")]
@@ -128,17 +111,7 @@ namespace PastryShopAPI.Controllers
         {
             try
             {
-                /*if (!ModelState.IsValid)
-                {
-                    foreach (var pair in ModelState)
-                    {
-                        if (pair.Key == nameof(updatedTeam.City) && pair.Value.Errors.Count > 0)
-                        {
-                            return BadRequest(pair.Value.Errors);
-                        }
-                    }
-                }*/
-
+         
                 var category = await _categoriesService.UpdateCategoryAsync(categoryId, updatedCategory);
                 return Ok(category);
             }
@@ -161,11 +134,7 @@ namespace PastryShopAPI.Controllers
                     return BadRequest(ModelState);
 
                 var newFile = updatedCategory.Image;
-                /*var actualFile = await _categoriesService.GetCategoryAsync(categoryId);
-                if (_fileService.IsNewFile(actualFile.Image, newFile))
-                {
-
-                }*/
+                
                 string imagePath = _fileService.UploadFile(newFile);
 
                 updatedCategory.ImagePath = imagePath;
