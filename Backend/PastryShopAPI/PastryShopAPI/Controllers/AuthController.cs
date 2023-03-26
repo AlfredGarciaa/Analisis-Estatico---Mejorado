@@ -12,7 +12,7 @@ namespace PastryShopAPI.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private IUserService userService;
+        readonly IUserService userService;
 
         public AuthController(IUserService userService)
         {
