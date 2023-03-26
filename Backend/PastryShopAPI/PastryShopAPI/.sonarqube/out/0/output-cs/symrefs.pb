@@ -2,7 +2,7 @@
 oE:\Final-Project-WebTechnologies-main - copia\Backend\PastryShopAPI\PastryShopAPI\Controllers\AuthController.cs
 
  <
- ( # .,,# .==# .NN# .
+ ) # .,,# .==# .NN# .
 + 6 *
 
 ) 6
