@@ -22,7 +22,7 @@ body.sec{
 /* TOGGLE ACTIONS */
 #navigation-container .nav-items-container .nav-menu .toggle-colors:before{
     content: '\f186';
-    /*font-family: fontAwesome;*/
+    font-family: fontAwesome, Arial, Helvetica, sans-serif;
 }
 
 .sec.dark #navigation-container .toggle-colors:before{
